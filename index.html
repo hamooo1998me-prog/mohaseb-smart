@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#7B2438">
+<title>المحاسب الذكي</title>
+<style>
+:root {
+  --burgundy: #7B2438;
+  --burgundy-dark: #541827;
+  --beige: #F4EBDD;
+  --navy: #172A46;
+  --white: #FFFFFF;
+  --black: #202124;
+  --gray: #747782;
+  --border: #E8E2D9;
+  --green: #237A57;
+  --red: #B52F40;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--black);
+  font-family: Tahoma, Arial, sans-serif;
+  padding-bottom: 85px;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+.header {
+  background: var(--navy);
+  color: white;
+  padding: 20px 17px 24px;
+  border-radius: 0 0 24px 24px;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.brand { font-size: 21px; font-weight: bold; }
+.brand small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 5px;
+  color: #E5D8C6;
+}
+.menu-btn {
+  background: rgba(255,255,255,.12);
+  color: white;
+  border: 1px solid rgba(255,255,255,.2);
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  font-size: 23px;
+}
+.welcome { margin-top: 24px; font-size: 14px; color: #E9EAF0; }
+.header h1 { margin: 8px 0 0; font-size: 23px; }
+.container { padding: 17px; max-width: 600px; margin: auto; }
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 22px 0 13px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.section-title:first-child { margin-top: 2px; }
+.date-label { font-size: 11px; color: var(--gray); font-weight: normal; }
+.balance-card {
+  background: var(--white);
+  padding: 18px;
+  border-radius: 19px;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 16px rgba(23,42,70,.04);
+}
+.balance-top { display: flex; justify-content: space-between; gap: 8px; }
+.balance-label { font-size: 13px; color: var(--gray); }
+.balance-value { font-size: 29px; font-weight: bold; color: var(--navy); margin: 12px 0; }
+.currency { font-size: 14px; }
+.balance-note { font-size: 12px; color: var(--gray); }
+.badge {
+  background: #F5E6E9;
+  color: var(--burgundy);
+  border-radius: 20px;
+  padding: 7px 10px;
+  font-size: 11px;
+  height: fit-content;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+  margin-top: 12px;
+}
+.stat-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 15px 13px;
+}
+.stat-icon {
+  width: 35px; height: 35px;
+  display: grid; place-items: center;
+  border-radius: 11px;
+  background: var(--beige);
+  font-size: 19px;
+}
+.stat-label { color: var(--gray); font-size: 12px; margin-top: 11px; }
+.stat-value { font-size: 19px; font-weight: bold; margin-top: 7px; }
+.green { color: var(--green); }
+.red { color: var(--red); }
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 13px 11px;
+  border-radius: 15px;
+  color: var(--black);
+  text-align: right;
+}
+.action-icon {
+  min-width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #F5E6E9;
+  font-size: 19px;
+}
+.action strong { display: block; font-size: 13px; }
+.action small { display: block; font-size: 10px; color: var(--gray); margin-top: 5px; }
+.list-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.empty-state { text-align: center; padding: 25px 12px; color: var(--gray); font-size: 13px; }
+.empty-state span { display: block; font-size: 27px; margin-bottom: 10px; }
+.page { display: none; }
+.page.active { display: block; }
+.form-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 17px;
+}
+.form-card label { display: block; font-size: 13px; margin: 14px 0 7px; }
+.form-card label:first-child { margin-top: 0; }
+.form-card input, .form-card select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #FFFEFC;
+  outline-color: var(--burgundy);
+}
+.primary-btn {
+  background: var(--burgundy);
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 18px;
+  font-weight: bold;
+}
+.secondary-btn {
+  background: white;
+  color: var(--navy);
+  border: 1px solid var(--border);
+  padding: 12px;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+.record {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+.record:last-child { border-bottom: 0; }
+.record small { display: block; color: var(--gray); margin-top: 5px; }
+.record strong { white-space: nowrap; }
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-top: 1px solid var(--border);
+  padding: 9px 3px calc(9px + env(safe-area-inset-bottom));
+  z-index: 10;
+}
+.nav-item {
+  background: transparent;
+  border: none;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  min-width: 56px;
+}
+.nav-item span { font-size: 20px; }
+.nav-item.active { color: var(--burgundy); font-weight: bold; }
+.notice {
+  background: #FFF5E6;
+  color: #79541A;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+.drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 20;
+  display: none;
+}
+.drawer {
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: min(82%, 320px);
+  background: var(--beige);
+  padding: 22px 16px;
+  overflow-y: auto;
+}
+.drawer h2 { color: var(--navy); font-size: 20px; }
+.drawer button {
+  display: block;
+  width: 100%;
+  border: none;
+  background: white;
+  text-align: right;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 11px;
+  color: var(--black);
+}
+.close-drawer { background: var(--navy) !important; color: white !important; }
+.toast {
+  position: fixed;
+  bottom: 85px;
+  left: 15px; right: 15px;
+  background: var(--navy);
+  color: white;
+  padding: 13px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 30;
+  display: none;
+  font-size: 13px;
+}
+@media (min-width: 500px) {
+  .container { padding: 22px; }
+  .header { padding-right: max(22px, calc((100% - 560px)/2)); padding-left: max(22px, calc((100% - 560px)/2)); }
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-top">
+    <div class="brand">المحاسب الذكي<small>إدارة حساباتك بسهولة</small></div>
+    <button class="menu-btn" onclick="openDrawer()" aria-label="فتح القائمة">☰</button>
+  </div>
+  <div class="welcome">أهلاً بيك 👋</div>
+  <h1 id="headerTitle">لوحة التحكم</h1>
+</header>
+
+<main class="container">
+  <section class="page active" id="dashboard">
+    <div class="section-title">ملخص الحسابات <span class="date-label" id="todayDate"></span></div>
+    <div class="balance-card">
+      <div class="balance-top">
+        <div class="balance-label">صافي الرصيد المسجل</div>
+        <div class="badge">نظرة عامة</div>
+      </div>
+      <div class="balance-value" id="netBalance">0.00 <span class="currency">ر.س</span></div>
+      <div class="balance-note">ملخص مبدئي للعمليات المسجلة على هذا الجهاز</div>
+    </div>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-icon">↗️</div>
+        <div class="stat-label">إجمالي الإيرادات</div>
+        <div class="stat-value green" id="incomeTotal">0.00 ر.س</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">↙️</div>
+        <div class="stat-label">إجمالي المصروفات</div>
+        <div class="stat-value red" id="expenseTotal">0.00 ر.س</div>
+      </div>
+    </div>
+    <div class="section-title">إضافة سريعة</div>
+    <div class="quick-actions">
+      <button class="action" onclick="showPage('income')"><span class="action-icon">＋</span><span><strong>تسجيل إيراد</strong><small>إضافة مبلغ داخل</small></span></button>
+      <button class="action" onclick="showPage('expense')"><span class="action-icon">－</span><span><strong>تسجيل مصروف</strong><small>إضافة مبلغ خارج</small></span></button>
+      <button class="action" onclick="showPage('invoices')"><span class="action-icon">🧾</span><span><strong>الفواتير</strong><small>متابعة الفواتير</small></span></button>
+      <button class="action" onclick="showPage('reports')"><span class="action-icon">📊</span><span><strong>التقارير</strong><small>ملخص العمليات</small></span></button>
+    </div>
+    <div class="section-title">آخر العمليات</div>
+    <div class="list-card" id="recentList"><div class="empty-state"><span>📒</span>لسه مفيش عمليات مسجلة</div></div>
+    <div class="notice">دي نسخة أولية للواجهة. البيانات الحالية تُحفظ على نفس الجهاز فقط، وليست نظام محاسبة متكاملًا أو نسخة احتياطية.</div>
+  </section>
+
+  <section class="page" id="income">
+    <div class="section-title">تسجيل إيراد</div>
+    <div class="form-card">
+      <label for="incomeDesc">بيان الإيراد</label>
+      <input id="incomeDesc" placeholder="مثال: مبيعات اليوم">
+      <label for="incomeAmount">المبلغ بالريال</label>
+      <input id="incomeAmount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00">
+      <label for="incomeDate">التاريخ</label>
+      <input id="incomeDate" type="date">
+      <button class="primary-btn" onclick="addTransaction('income')">حفظ الإيراد</button>
+    </div>
+  </section>
+
+  <section class="page" id="expense">
+    <div class="section-title">تسجيل مصروف</div>
+    <div class="form-card">
+      <label for="expenseDesc">بيان المصروف</label>
+      <input id="expenseDesc" placeholder="مثال: إيجار المحل">
+      <label for="expenseAmount">المبلغ بالريال</label>
+      <input id="expenseAmount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00">
+      <label for="expenseDate">التاريخ</label>
+      <input id="expenseDate" type="date">
+      <button class="primary-btn" onclick="addTransaction('expense')">حفظ المصروف</button>
+    </div>
+  </section>
+
+  <section class="page" id="invoices">
+    <div class="section-title">الفواتير</div>
+    <div class="list-card" id="invoiceList"><div class="empty-state"><span>🧾</span>قسم الفواتير جاهز للتطوير في الخطوات القادمة</div></div>
+    <div class="notice">هنضيف إنشاء الفواتير وتفاصيل العملاء والضرائب بعد تجهيز أساس التطبيق.</div>
+  </section>
+
+  <section class="page" id="reports">
+    <div class="section-title">التقارير المبدئية</div>
+    <div class="stats">
+      <div class="stat-card"><div class="stat-label">عدد العمليات</div><div class="stat-value" id="countTotal">0</div></div>
+      <div class="stat-card"><div class="stat-label">صافي الحركة</div><div class="stat-value" id="reportNet">0.00 ر.س</div></div>
+    </div>
+    <div class="section-title">كل العمليات</div>
+    <div class="list-card" id="allTransactions"><div class="empty-state">لا توجد بيانات حتى الآن</div></div>
+    <button class="secondary-btn" onclick="exportCSV()">تصدير العمليات كملف CSV</button>
+    <button class="secondary-btn" onclick="clearTransactions()">مسح كل العمليات المحفوظة</button>
+    <div class="notice">التقرير هنا ملخص بسيط للإيرادات والمصروفات، وليس ميزان مراجعة أو قوائم مالية معتمدة.</div>
+  </section>
+
+  <section class="page" id="customers">
+    <div class="section-title">العملاء</div>
+    <div class="form-card">
+      <label for="customerName">اسم العميل</label>
+      <input id="customerName" placeholder="اكتب اسم العميل">
+      <label for="customerPhone">رقم الجوال (اختياري)</label>
+      <input id="customerPhone" type="tel" inputmode="tel" placeholder="05xxxxxxxx">
+      <button class="primary-btn" onclick="addCustomer()">حفظ العميل</button>
+    </div>
+    <div class="section-title">قائمة العملاء</div>
+    <div class="list-card" id="customerList"><div class="empty-state">لا يوجد عملاء مسجلون</div></div>
+  </section>
+
+  <section class="page" id="settings">
+    <div class="section-title">الإعدادات</div>
+    <div class="form-card">
+      <label for="businessName">اسم المنشأة</label>
+      <input id="businessName" placeholder="اكتب اسم المنشأة">
+      <button class="primary-btn" onclick="saveBusinessName()">حفظ الإعدادات</button>
+      <button class="secondary-btn" onclick="exportBackup()">تصدير نسخة بيانات JSON</button>
+      <div class="notice">احفظ نسخة احتياطية من بياناتك بشكل دوري. لا تُدخل بيانات مالية حقيقية أو حساسة في هذه النسخة التجريبية قبل إضافة الحماية وقاعدة البيانات.</div>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <button class="nav-item active" data-page="dashboard" onclick="showPage('dashboard')"><span>⌂</span>الرئيسية</button>
+  <button class="nav-item" data-page="income" onclick="showPage('income')"><span>＋</span>إيراد</button>
+  <button class="nav-item" data-page="expense" onclick="showPage('expense')"><span>－</span>مصروف</button>
+  <button class="nav-item" data-page="reports" onclick="showPage('reports')"><span>▤</span>التقارير</button>
+</nav>
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer(event)">
+  <div class="drawer" onclick="event.stopPropagation()">
+    <h2>المحاسب الذكي</h2>
+    <button class="close-drawer" onclick="closeDrawer()">إغلاق القائمة ✕</button>
+    <button onclick="goFromMenu('dashboard')">🏠 لوحة التحكم</button>
+    <button onclick="goFromMenu('income')">↗️ تسجيل إيراد</button>
+    <button onclick="goFromMenu('expense')">↙️ تسجيل مصروف</button>
+    <button onclick="goFromMenu('invoices')">🧾 الفواتير</button>
+    <button onclick="goFromMenu('customers')">👥 العملاء</button>
+    <button onclick="goFromMenu('reports')">📊 التقارير</button>
+    <button onclick="goFromMenu('settings')">⚙️ الإعدادات</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const STORAGE_KEY = 'mohaseb_smart_demo_v1';
+const CUSTOMER_KEY = 'mohaseb_smart_customers_v1';
+const SETTINGS_KEY = 'mohaseb_smart_settings_v1';
+let transactions = loadJSON(STORAGE_KEY, []);
+let customers = loadJSON(CUSTOMER_KEY, []);
+let settings = loadJSON(SETTINGS_KEY, {businessName: ''});
+const pages = {
+  dashboard: 'لوحة التحكم',
+  income: 'تسجيل إيراد',
+  expense: 'تسجيل مصروف',
+  invoices: 'الفواتير',
+  reports: 'التقارير',
+  customers: 'العملاء',
+  settings: 'الإعدادات'
+};
+
+function loadJSON(key, fallback) {
+  try {
+    const value = JSON.parse(localStorage.getItem(key));
+    return value ?? fallback;
+  } catch (e) { return fallback; }
+}
+function money(value) {
+  return Number(value || 0).toLocaleString('ar-SA', {
+    minimumFractionDigits: 2, maximumFractionDigits: 2
+  }) + ' ر.س';
+}
+function todayISO() {
+  const d = new Date();
+  const offset = d.getTimezoneOffset();
+  return new Date(d.getTime() - offset * 60000).toISOString().slice(0, 10);
+}
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, c => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  }[c]));
+}
+function showToast(message) {
+  const el = document.getElementById('toast');
+  el.textContent = message;
+  el.style.display = 'block';
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => el.style.display = 'none', 2600);
+}
+function showPage(page) {
+  if (!pages[page]) return;
+  document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+  document.getElementById(page).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.page === page);
+  });
+  document.getElementById('headerTitle').textContent = pages[page];
+  closeDrawer();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  renderAll();
+}
+function openDrawer() {
+  document.getElementById('drawerOverlay').style.display = 'block';
+}
+function closeDrawer() {
+  document.getElementById('drawerOverlay').style.display = 'none';
+}
+function goFromMenu(page) { showPage(page); }
+function addTransaction(type) {
+  const descEl = document.getElementById(type + 'Desc');
+  const amountEl = document.getElementById(type + 'Amount');
+  const dateEl = document.getElementById(type + 'Date');
+  const description = descEl.value.trim();
+  const amount = Number(amountEl.value);
+  const date = dateEl.value || todayISO();
+  if (!description) { showToast('اكتب بيان العملية أولاً'); descEl.focus(); return; }
+  if (!Number.isFinite(amount) || amount <= 0) { showToast('اكتب مبلغًا صحيحًا أكبر من صفر'); amountEl.focus(); return; }
+  transactions.unshift({
+    id: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random()),
+    type, description, amount: Math.round(amount * 100) / 100, date,
+    createdAt: new Date().toISOString()
+  });
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions)); }
+  catch (e) { showToast('تعذر الحفظ على الجهاز'); return; }
+  descEl.value = '';
+  amountEl.value = '';
+  dateEl.value = todayISO();
+  renderAll();
+  showToast(type === 'income' ? 'تم حفظ الإيراد على هذا الجهاز' : 'تم حفظ المصروف على هذا الجهاز');
+}
+function totals() {
+  const income = transactions.filter(t => t.type === 'income').reduce((s,t) => s + t.amount, 0);
+  const expense = transactions.filter(t => t.type === 'expense').reduce((s,t) => s + t.amount, 0);
+  return {income, expense, net: income - expense};
+}
+function recordHTML(t) {
+  const positive = t.type === 'income';
+  return `<div class="record"><div>${escapeHTML(t.description)}<small>${positive ? 'إيراد' : 'مصروف'} • ${escapeHTML(t.date)}</small></div><strong class="${positive ? 'green' : 'red'}">${positive ? '+' : '−'} ${money(t.amount)}</strong></div>`;
+}
+function renderTransactions() {
+  const recent = document.getElementById('recentList');
+  const all = document.getElementById('allTransactions');
+  recent.innerHTML = transactions.length
+    ? transactions.slice(0, 5).map(recordHTML).join('')
+    : '<div class="empty-state"><span>📒</span>لسه مفيش عمليات مسجلة</div>';
+  all.innerHTML = transactions.length
+    ? transactions.map(recordHTML).join('')
+    : '<div class="empty-state">لا توجد بيانات حتى الآن</div>';
+  document.getElementById('countTotal').textContent = transactions.length;
+}
+function renderCustomers() {
+  const list = document.getElementById('customerList');
+  list.innerHTML = customers.length
+    ? customers.map((c, i) => `<div class="record"><div>${escapeHTML(c.name)}<small>${escapeHTML(c.phone || 'بدون رقم جوال')}</small></div><button onclick="deleteCustomer(${i})" style="border:0;background:#F5E6E9;color:#7B2438;border-radius:8px;padding:8px">حذف</button></div>`).join('')
+    : '<div class="empty-state">لا يوجد عملاء مسجلون</div>';
+}
+function addCustomer() {
+  const nameEl = document.getElementById('customerName');
+  const phoneEl = document.getElementById('customerPhone');
+  const name = nameEl.value.trim();
+  if (!name) { showToast('اكتب اسم العميل'); nameEl.focus(); return; }
+  customers.push({name, phone: phoneEl.value.trim(), createdAt: new Date().toISOString()});
+  try { localStorage.setItem(CUSTOMER_KEY, JSON.stringify(customers)); }
+  catch (e) { showToast('تعذر الحفظ على الجهاز'); return; }
+  nameEl.value = ''; phoneEl.value = '';
+  renderCustomers(); showToast('تم حفظ العميل على هذا الجهاز');
+}
+function deleteCustomer(index) {
+  if (!confirm('هل تريد حذف هذا العميل؟')) return;
+  customers.splice(index, 1);
+  localStorage.setItem(CUSTOMER_KEY, JSON.stringify(customers));
+  renderCustomers(); showToast('تم حذف العميل');
+}
+function saveBusinessName() {
+  settings.businessName = document.getElementById('businessName').value.trim();
+  localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  showToast('تم حفظ الإعدادات على هذا الجهاز');
+}
+function exportCSV() {
+  if (!transactions.length) { showToast('لا توجد عمليات لتصديرها'); return; }
+  const rows = [['النوع','البيان','المبلغ','العملة','التاريخ']];
+  transactions.forEach(t => rows.push([t.type === 'income' ? 'إيراد' : 'مصروف', t.description, t.amount, 'SAR', t.date]));
+  const csv = '\uFEFF' + rows.map(row => row.map(v => '"' + String(v).replace(/"/g,'""') + '"').join(',')).join('\r\n');
+  downloadFile(csv, 'mohaseb-transactions.csv', 'text/csv;charset=utf-8;');
+}
+function exportBackup() {
+  const data = {app: 'المحاسب الذكي', version: 1, exportedAt: new Date().toISOString(), settings, transactions, customers};
+  downloadFile(JSON.stringify(data, null, 2), 'mohaseb-smart-backup.json', 'application/json');
+}
+function downloadFile(content, filename, type) {
+  const blob = new Blob([content], {type});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function clearTransactions() {
+  if (!transactions.length) { showToast('لا توجد عمليات لمسحها'); return; }
+  if (!confirm('تنبيه: سيتم حذف كل عمليات الإيرادات والمصروفات من هذا الجهاز. هل تريد المتابعة؟')) return;
+  transactions = [];
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
+  renderAll(); showToast('تم مسح العمليات من هذا الجهاز');
+}
+function renderAll() {
+  const t = totals();
+  document.getElementById('netBalance').innerHTML = `${money(t.net).replace(' ر.س','')} <span class="currency">ر.س</span>`;
+  document.getElementById('incomeTotal').textContent = money(t.income);
+  document.getElementById('expenseTotal').textContent = money(t.expense);
+  document.getElementById('reportNet').textContent = money(t.net);
+  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('ar-SA');
+  document.getElementById('businessName').value = settings.businessName || '';
+  renderTransactions();
+  renderCustomers();
+}
+document.getElementById('incomeDate').value = todayISO();
+document.getElementById('expenseDate').value = todayISO();
+renderAll();
+</script>
+</body>
+</html>
