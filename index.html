@@ -25,12 +25,10 @@
   --radius:16px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Tahoma,Arial,sans-serif;
-  font-size:14px;
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;font-size:14px;
 }
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
@@ -43,129 +41,82 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .bad{color:var(--red)}
 .app{display:flex;min-height:100vh}
 .sidebar{
-  width:245px;
-  flex-shrink:0;
-  background:#0e1727;
-  border-left:1px solid var(--border);
-  padding:20px 13px;
-  display:flex;
-  flex-direction:column;
+  width:245px;flex-shrink:0;background:#0e1727;
+  border-left:1px solid var(--border);padding:18px 12px;
+  display:flex;flex-direction:column;
 }
 .brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:10px 9px 24px;
-  border-bottom:1px solid var(--border);
-  margin-bottom:18px;
+  display:flex;align-items:center;gap:12px;padding:10px 9px 22px;
+  border-bottom:1px solid var(--border);margin-bottom:15px;
 }
 .brand-icon{
-  width:44px;height:44px;
-  display:grid;place-items:center;
-  border-radius:13px;
-  background:linear-gradient(145deg,#e0c782,#8b6c32);
-  color:#101827;
-  font-size:23px;
-  font-weight:bold;
+  width:44px;height:44px;display:grid;place-items:center;
+  border-radius:13px;background:linear-gradient(145deg,#e0c782,#8b6c32);
+  color:#101827;font-size:23px;font-weight:bold;flex-shrink:0;
 }
-.brand h2{margin:0 0 5px;font-size:17px}
+.brand h2{margin:0 0 5px;font-size:16px}
 .brand small{color:var(--muted)}
-.nav-title{
-  font-size:11px;
-  color:#8190a8;
-  padding:13px 12px 7px;
-}
+.nav-title{font-size:11px;color:#8190a8;padding:13px 12px 7px}
 .nav-btn{
-  width:100%;
-  border:0;
-  border-radius:10px;
-  background:transparent;
-  color:#bac5d6;
-  padding:12px 13px;
-  display:flex;
-  align-items:center;
-  gap:11px;
-  text-align:right;
-  margin-bottom:4px;
-  transition:.2s;
+  width:100%;border:0;border-radius:10px;background:transparent;
+  color:#bac5d6;padding:11px 12px;display:flex;align-items:center;
+  gap:10px;text-align:right;margin-bottom:3px;transition:.2s;
 }
-.nav-btn .ico{width:22px;text-align:center;font-size:16px}
-.nav-btn:hover,.nav-btn.active{
-  color:var(--gold2);
-  background:#c6a45c18;
-}
-.sidebar-bottom{
-  margin-top:auto;
-  padding-top:18px;
-  border-top:1px solid var(--border);
-}
+.nav-btn .ico{width:22px;text-align:center;font-size:16px;flex-shrink:0}
+.nav-btn:hover,.nav-btn.active{color:var(--gold2);background:#c6a45c18}
+.sidebar-bottom{margin-top:auto;padding-top:15px;border-top:1px solid var(--border)}
 .main{flex:1;min-width:0}
 .topbar{
-  height:75px;
-  padding:0 25px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  border-bottom:1px solid var(--border);
-  background:#0e1727;
-  position:sticky;top:0;z-index:5;
+  min-height:72px;padding:12px 22px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);
+  background:#0e1727;position:sticky;top:0;z-index:5;
 }
-.top-title h2{margin:0 0 5px;font-size:18px}
+.top-title h2{margin:0 0 5px;font-size:17px}
 .top-title small{color:var(--muted)}
-.top-actions{display:flex;align-items:center;gap:9px}
+.top-actions{display:flex;align-items:center;gap:8px}
 .avatar{
-  width:37px;height:37px;border-radius:50%;
-  display:grid;place-items:center;
-  background:#c6a45c20;color:var(--gold2);
-  border:1px solid #c6a45c60;
+  width:37px;height:37px;border-radius:50%;display:grid;place-items:center;
+  background:#c6a45c20;color:var(--gold2);border:1px solid #c6a45c60;
 }
-.content{padding:25px;max-width:1500px;margin:auto}
+.content{padding:24px;max-width:1500px;margin:auto}
 .page-head{
   display:flex;align-items:center;justify-content:space-between;
-  gap:15px;margin-bottom:22px;flex-wrap:wrap;
+  gap:15px;margin-bottom:21px;flex-wrap:wrap;
 }
 .page-head h1{font-size:23px;margin:0 0 8px}
-.page-head p{margin:0;color:var(--muted);line-height:1.8}
+.page-head p{margin:0;color:var(--muted);line-height:1.9}
 .btn{
-  border:1px solid var(--border);
-  color:var(--text);
-  background:var(--panel2);
-  padding:10px 15px;border-radius:10px;
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:7px;
+  border:1px solid var(--border);color:var(--text);background:var(--panel2);
+  padding:10px 14px;border-radius:10px;display:inline-flex;
+  align-items:center;justify-content:center;gap:7px;
 }
 .btn:hover{filter:brightness(1.15)}
 .btn-primary{
-  color:#101827;
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#101827;background:linear-gradient(135deg,var(--gold2),var(--gold));
   border-color:transparent;font-weight:bold;
 }
 .btn-danger{color:#ff9da5;border-color:#ff6b7640;background:#ff6b7610}
 .btn-success{color:var(--green);border-color:#28c79a40}
 .btn-sm{padding:7px 10px;font-size:12px}
-.grid{display:grid;gap:16px}
-.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:22px}
+.grid{display:grid;gap:15px}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:20px}
 .card{
   background:linear-gradient(145deg,#142137,#101a2c);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:19px;
-  min-width:0;
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px;min-width:0;
 }
 .stat-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .stat-icon{
-  width:42px;height:42px;border-radius:12px;
-  display:grid;place-items:center;
-  background:#c6a45c18;color:var(--gold2);font-size:19px;
+  width:40px;height:40px;border-radius:12px;display:grid;
+  place-items:center;background:#c6a45c18;color:var(--gold2);font-size:19px;
 }
 .stat-label{color:var(--muted);font-size:13px}
-.stat-value{font-size:24px;font-weight:bold;margin:16px 0 8px;overflow-wrap:anywhere}
+.stat-value{font-size:23px;font-weight:bold;margin:15px 0 8px;overflow-wrap:anywhere}
 .stat-foot{font-size:12px;color:var(--muted)}
 .two-col{grid-template-columns:1.4fr 1fr}
 .card-title{
   display:flex;align-items:center;justify-content:space-between;
-  gap:10px;margin-bottom:18px;
+  gap:10px;margin-bottom:17px;
 }
 .card-title h3{font-size:15px;margin:0}
 .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -173,19 +124,14 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .field.full{grid-column:1/-1}
 label{font-size:12px;color:#b6c2d4}
 input,select,textarea{
-  width:100%;min-width:0;
-  padding:12px 13px;
-  background:#0b1424;
-  color:var(--text);
-  border:1px solid #2c3b52;
-  border-radius:9px;
-  outline:none;
+  width:100%;min-width:0;padding:12px 13px;background:#0b1424;
+  color:var(--text);border:1px solid #2c3b52;border-radius:9px;outline:none;
 }
 input:focus,select:focus,textarea:focus{border-color:var(--gold)}
 textarea{min-height:85px;resize:vertical}
 .table-wrap{overflow:auto;width:100%;border:1px solid var(--border);border-radius:12px}
-table{border-collapse:collapse;width:100%;min-width:650px}
-th,td{padding:13px 14px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+table{border-collapse:collapse;width:100%;min-width:600px}
+th,td{padding:12px 13px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
 th{background:#0d1728;color:var(--muted);font-size:12px;font-weight:normal}
 td{font-size:13px}
 tbody tr:hover{background:#ffffff05}
@@ -195,121 +141,117 @@ tbody tr:last-child td{border-bottom:0}
 .badge-red{color:var(--red);background:#ff6b7618}
 .badge-gold{color:var(--gold2);background:#c6a45c18}
 .actions{display:flex;gap:6px;align-items:center}
-.empty{text-align:center;padding:35px 15px;color:var(--muted)}
+.empty{text-align:center;padding:32px 14px;color:var(--muted)}
 .search-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}
 .search-row input{max-width:320px}
-.progress{height:7px;border-radius:10px;background:#27354a;overflow:hidden}
-.progress span{display:block;height:100%;background:var(--gold);border-radius:10px}
-.list-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
+.list-row{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:12px 0;border-bottom:1px solid var(--border);
+}
 .list-row:last-child{border-bottom:0}
 .modal-backdrop{
-  position:fixed;inset:0;z-index:30;
-  background:#000a;display:grid;place-items:center;
-  padding:15px;overflow:auto;
+  position:fixed;inset:0;z-index:30;background:#000b;
+  display:grid;place-items:center;padding:14px;overflow:auto;
 }
 .modal{
-  width:min(650px,100%);
-  max-height:92vh;overflow:auto;
+  width:min(650px,100%);max-height:92vh;overflow:auto;
   background:#111c2e;border:1px solid var(--border);
-  border-radius:17px;padding:22px;
+  border-radius:17px;padding:21px;
 }
-.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;gap:10px}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:19px;gap:10px}
 .modal-head h3{margin:0}
-.close-btn{border:0;background:transparent;color:var(--muted);font-size:24px}
+.close-btn{border:0;background:transparent;color:var(--muted);font-size:25px}
 .toast{
-  position:fixed;bottom:22px;left:20px;z-index:100;
-  padding:14px 18px;background:#1b2a40;border:1px solid var(--border);
-  border-radius:12px;max-width:90%;box-shadow:0 10px 35px #0005;
+  position:fixed;bottom:20px;left:15px;z-index:110;
+  padding:13px 17px;background:#1b2a40;border:1px solid var(--border);
+  border-radius:12px;max-width:92%;box-shadow:0 10px 35px #0005;line-height:1.7;
 }
 .toast.error{border-color:#ff6b7680}
 .toast.success{border-color:#28c79a80}
 .loader{
-  position:fixed;inset:0;background:#0b1120eF;z-index:90;
+  position:fixed;inset:0;background:#0b1120ee;z-index:120;
   display:grid;place-items:center;
 }
 .loader-box{text-align:center;color:var(--gold2)}
 .spinner{
-  width:42px;height:42px;border:3px solid #38455a;
-  border-top-color:var(--gold);border-radius:50%;
-  animation:spin .8s linear infinite;margin:0 auto 15px;
+  width:42px;height:42px;border:3px solid #38455a;border-top-color:var(--gold);
+  border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 15px;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
-.auth-screen{
-  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
-  background:#0b1120;
-}
+.auth-screen{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:#0b1120}
 .auth-visual{
-  background:
-  radial-gradient(circle at 20% 20%,#c6a45c25,transparent 32%),
+  background:radial-gradient(circle at 20% 20%,#c6a45c25,transparent 32%),
   radial-gradient(circle at 80% 80%,#385c8d25,transparent 35%),
   linear-gradient(145deg,#101a2c,#172b45);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:55px;
+  display:flex;flex-direction:column;justify-content:center;padding:48px;
 }
-.auth-visual h1{font-size:42px;line-height:1.5;margin:25px 0 10px}
+.auth-visual h1{font-size:40px;line-height:1.5;margin:24px 0 10px}
 .auth-visual p{font-size:15px;color:#b6c2d4;line-height:2}
-.feature{display:flex;gap:10px;align-items:center;margin-top:17px;color:#d1d9e5}
+.feature{display:flex;gap:10px;align-items:center;margin-top:15px;color:#d1d9e5}
 .feature span{color:var(--gold2)}
-.auth-form-wrap{display:grid;place-items:center;padding:25px}
+.auth-form-wrap{display:grid;place-items:center;padding:24px}
 .auth-form{width:min(420px,100%)}
 .auth-form h2{font-size:25px;margin:0 0 9px}
-.auth-form>p{color:var(--muted);line-height:1.8;margin-bottom:25px}
+.auth-form>p{color:var(--muted);line-height:1.8;margin-bottom:24px}
 .auth-form .field{margin-bottom:15px}
 .auth-switch{text-align:center;margin-top:20px;color:var(--muted)}
 .text-btn{background:none;border:0;color:var(--gold2);padding:0}
-.mobile-menu{display:none}
-.bottom-nav{display:none}
 .company-code{
-  letter-spacing:2px;font-size:22px;font-weight:bold;
-  color:var(--gold2);padding:15px;background:#0b1424;
-  border:1px dashed var(--gold);border-radius:12px;text-align:center;
+  letter-spacing:2px;font-size:22px;font-weight:bold;color:var(--gold2);
+  padding:15px;background:#0b1424;border:1px dashed var(--gold);
+  border-radius:12px;text-align:center;overflow-wrap:anywhere;
 }
-.invoice-paper{background:white;color:#172033;padding:25px;border-radius:8px}
+.invoice-paper{background:white;color:#172033;padding:24px;border-radius:8px}
 .invoice-paper h2,.invoice-paper h3{color:#172033}
 .invoice-paper table{min-width:0;color:#172033}
 .invoice-paper th{background:#eef1f5;color:#333}
 .invoice-paper td,.invoice-paper th{border-color:#ddd}
+.info-box{
+  background:#0b1424;border:1px solid var(--border);
+  border-radius:12px;padding:15px;line-height:2;color:#c4cede;
+}
+.menu-overlay{
+  display:none;position:fixed;inset:0;background:#0009;z-index:19;
+}
+.menu-overlay.open{display:block}
+.mobile-menu{display:none}
 @media(max-width:1050px){
- .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
- .two-col{grid-template-columns:1fr}
- .sidebar{width:215px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two-col{grid-template-columns:1fr}
+  .sidebar{width:220px}
 }
 @media(max-width:720px){
- .sidebar{display:none}
- .topbar{height:65px;padding:0 14px}
- .content{padding:16px 12px 90px}
- .top-title h2{font-size:15px}
- .top-title small{font-size:10px}
- .stats{gap:10px}
- .card{padding:14px}
- .stat-value{font-size:19px}
- .stat-icon{width:35px;height:35px}
- .mobile-menu{display:inline-flex}
- .bottom-nav{
-   display:flex;position:fixed;bottom:0;left:0;right:0;z-index:10;
-   background:#0e1727;border-top:1px solid var(--border);
-   justify-content:space-around;padding:7px 3px calc(7px + env(safe-area-inset-bottom));
- }
- .bottom-nav button{
-   flex:1;border:0;background:none;color:var(--muted);
-   display:flex;flex-direction:column;gap:4px;align-items:center;
-   font-size:10px;padding:5px 1px;
- }
- .bottom-nav button.active{color:var(--gold2)}
- .bottom-nav .ico{font-size:17px}
- .auth-screen{grid-template-columns:1fr}
- .auth-visual{display:none}
- .auth-form-wrap{min-height:100vh;padding:22px}
- .form-grid{grid-template-columns:1fr}
- .page-head h1{font-size:20px}
- .top-actions .user-email{display:none}
+  .sidebar{
+    display:flex;position:fixed;z-index:20;right:0;top:0;bottom:0;
+    width:min(78vw,285px);max-width:285px;height:100dvh;
+    overflow-y:auto;transform:translateX(110%);transition:transform .25s ease;
+    box-shadow:-10px 0 30px #0004;
+  }
+  .sidebar.open{transform:translateX(0)}
+  .topbar{min-height:64px;padding:10px 12px}
+  .content{padding:16px 12px 35px}
+  .top-title h2{font-size:15px}
+  .top-title small{font-size:10px}
+  .stats{gap:10px}
+  .card{padding:13px}
+  .stat-value{font-size:18px}
+  .stat-icon{width:35px;height:35px}
+  .mobile-menu{display:inline-flex;padding:9px 11px}
+  .auth-screen{grid-template-columns:1fr}
+  .auth-visual{display:none}
+  .auth-form-wrap{min-height:100vh;padding:22px}
+  .form-grid{grid-template-columns:1fr}
+  .page-head h1{font-size:20px}
+  .top-actions .user-email{display:none}
+  .table-wrap{max-width:100%}
+  .modal{padding:16px}
 }
 @media print{
- body{background:white;color:#111}
- .sidebar,.topbar,.bottom-nav,.no-print,.page-head{display:none!important}
- .content{padding:0;max-width:none}
- .card{background:white;color:#111;border:0}
- .invoice-paper{display:block!important}
+  body{background:white;color:#111}
+  .sidebar,.topbar,.no-print,.menu-overlay{display:none!important}
+  .content{padding:0;max-width:none}
+  .card{background:white;color:#111;border:0}
+  .invoice-paper{display:block!important}
 }
 </style>
 </head>
@@ -327,13 +269,14 @@ tbody tr:last-child td{border-bottom:0}
   <div class="auth-visual">
     <div class="brand-icon">م</div>
     <h1>المحاسب <span class="gold">الذكي</span></h1>
-    <p>إدارة حساباتك وشركتك في مكان واحد.<br>نظام محاسبي منظم يساعدك على متابعة معاملاتك.</p>
+    <p>إدارة حساباتك وشركتك في مكان واحد.<br>نظام محاسبي منظم لمتابعة معاملاتك.</p>
     <div class="feature"><span>✓</span> إدارة الفواتير والمبيعات والمشتريات</div>
     <div class="feature"><span>✓</span> متابعة العملاء والموردين والخزينة</div>
-    <div class="feature"><span>✓</span> تجهيز للربط بين محاسبي الشركة</div>
     <div class="feature"><span>✓</span> تقارير مالية واضحة</div>
-    <p class="small">حقوق المشروع: محمد كرم</p>
+    <div class="feature"><span>✓</span> واجهة عربية سهلة الاستخدام</div>
+    <p class="small">حقوق المشروع والتطوير: محمد كرم</p>
   </div>
+
   <div class="auth-form-wrap">
     <form id="authForm" class="auth-form">
       <h2 id="authTitle">مرحبًا بعودتك</h2>
@@ -343,33 +286,40 @@ tbody tr:last-child td{border-bottom:0}
         <label for="authName">الاسم</label>
         <input id="authName" autocomplete="name" placeholder="اكتب اسمك">
       </div>
+
       <div class="field">
         <label for="authEmail">البريد الإلكتروني</label>
         <input id="authEmail" type="email" autocomplete="email" required placeholder="name@example.com">
       </div>
+
       <div class="field">
         <label for="authPassword">كلمة المرور</label>
         <input id="authPassword" type="password" autocomplete="current-password" required minlength="6" placeholder="6 أحرف على الأقل">
       </div>
+
       <button id="authSubmit" class="btn btn-primary" style="width:100%;margin-top:7px" type="submit">تسجيل الدخول</button>
+
       <div style="margin-top:15px;text-align:center">
         <button type="button" class="text-btn" onclick="forgotPassword()">نسيت كلمة المرور؟</button>
       </div>
+
       <div class="auth-switch">
         <span id="switchText">ليس لديك حساب؟</span>
         <button id="switchMode" class="text-btn" type="button" onclick="toggleAuthMode()">إنشاء حساب</button>
       </div>
-      <p class="small" style="text-align:center;margin-top:25px">يتم حفظ بيانات الحساب عبر خدمة Supabase.</p>
+
+      <p class="small muted" style="text-align:center;margin-top:25px">تتم إدارة تسجيل الدخول من خلال Supabase.</p>
     </form>
   </div>
 </section>
 
 <div id="app" class="app hidden">
-  <aside class="sidebar">
+  <aside id="sidebar" class="sidebar">
     <div class="brand">
       <div class="brand-icon">م</div>
       <div><h2>المحاسب الذكي</h2><small>نظام الإدارة المالية</small></div>
     </div>
+
     <div class="nav-title">القائمة الرئيسية</div>
     <button class="nav-btn active" data-page="dashboard" onclick="navigate('dashboard')"><span class="ico">▦</span>لوحة التحكم</button>
     <button class="nav-btn" data-page="transactions" onclick="navigate('transactions')"><span class="ico">⇄</span>الخزينة والحركات</button>
@@ -377,41 +327,43 @@ tbody tr:last-child td{border-bottom:0}
     <button class="nav-btn" data-page="customers" onclick="navigate('customers')"><span class="ico">♙</span>العملاء</button>
     <button class="nav-btn" data-page="suppliers" onclick="navigate('suppliers')"><span class="ico">♧</span>الموردون</button>
     <button class="nav-btn" data-page="reports" onclick="navigate('reports')"><span class="ico">▥</span>التقارير</button>
+
     <div class="nav-title">إدارة النظام</div>
     <button class="nav-btn" data-page="company" onclick="navigate('company')"><span class="ico">⌂</span>الشركة والمحاسبون</button>
     <button class="nav-btn" data-page="settings" onclick="navigate('settings')"><span class="ico">⚙</span>الإعدادات</button>
+    <button class="nav-btn" data-page="program" onclick="navigate('program')"><span class="ico">ⓘ</span>معلومات البرنامج</button>
+    <button class="nav-btn" data-page="privacy" onclick="navigate('privacy')"><span class="ico">♙</span>سياسة الخصوصية</button>
+    <button class="nav-btn" data-page="about" onclick="navigate('about')"><span class="ico">✦</span>عن البرنامج</button>
+    <button class="nav-btn" data-page="developers" onclick="navigate('developers')"><span class="ico">⌘</span>حقوق التطوير</button>
+
     <div class="sidebar-bottom">
       <div class="small muted" id="sidebarEmail" style="overflow-wrap:anywhere"></div>
-      <button class="nav-btn" onclick="logout()" style="margin-top:12px"><span class="ico">↪</span>تسجيل الخروج</button>
+      <button class="nav-btn" onclick="logout()" style="margin-top:10px"><span class="ico">↪</span>تسجيل الخروج</button>
     </div>
   </aside>
 
+  <div id="menuOverlay" class="menu-overlay" onclick="closeMobileMenu()"></div>
+
   <main class="main">
     <header class="topbar">
-      <div style="display:flex;align-items:center;gap:10px">
-        <button class="btn mobile-menu" onclick="goBack()" title="رجوع">←</button>
+      <div style="display:flex;align-items:center;gap:9px">
+        <button class="btn mobile-menu" onclick="toggleMobileMenu()" aria-label="فتح القائمة">☰</button>
         <div class="top-title">
           <h2 id="topHeading">لوحة التحكم</h2>
           <small id="topBusiness">مرحبًا بك في المحاسب الذكي</small>
         </div>
       </div>
+
       <div class="top-actions">
         <button class="btn btn-sm" onclick="refreshData()">⟳ تحديث</button>
         <span class="user-email small muted" id="userEmail"></span>
         <div class="avatar">م</div>
       </div>
     </header>
+
     <div id="content" class="content"></div>
   </main>
 </div>
-
-<nav id="bottomNav" class="bottom-nav hidden">
-  <button data-page="dashboard" class="active" onclick="navigate('dashboard')"><span class="ico">▦</span>الرئيسية</button>
-  <button data-page="invoices" onclick="navigate('invoices')"><span class="ico">▤</span>الفواتير</button>
-  <button data-page="transactions" onclick="navigate('transactions')"><span class="ico">⇄</span>الخزينة</button>
-  <button data-page="customers" onclick="navigate('customers')"><span class="ico">♙</span>العملاء</button>
-  <button data-page="company" onclick="navigate('company')"><span class="ico">⌂</span>الشركة</button>
-</nav>
 
 <div id="modalRoot"></div>
 <div id="toastRoot"></div>
@@ -419,13 +371,15 @@ tbody tr:last-child td{border-bottom:0}
 <script>
 'use strict';
 
-/* =====================================================
-   إعداد الاتصال: بيانات مشروع Supabase الحالي
-   لا تضع service_role key داخل ملف المتصفح مطلقًا.
-   ===================================================== */
-
+/* إعداد Supabase */
 const SUPABASE_URL = 'https://oqoujrcljczqmocpwpjx.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_SC8k26To0pBOmC8-xk3NRA_DvCknOXr';
+
+if (!window.supabase) {
+  document.getElementById('loader').classList.add('hidden');
+  alert('تعذر تحميل مكتبة الاتصال. تحقق من الإنترنت ثم أعد فتح البرنامج.');
+  throw new Error('Supabase library failed to load');
+}
 
 const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -450,57 +404,86 @@ const PAGE_TITLES = {
   suppliers:'الموردون',
   reports:'التقارير المالية',
   company:'الشركة والمحاسبون',
-  settings:'الإعدادات'
+  settings:'الإعدادات',
+  program:'معلومات البرنامج',
+  privacy:'سياسة الخصوصية',
+  about:'عن البرنامج',
+  developers:'حقوق التطوير'
 };
 
 function $(id){return document.getElementById(id)}
+
 function esc(value){
   return String(value ?? '').replace(/[&<>"']/g, ch => ({
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   })[ch]);
 }
+
 function num(value){
-  const n = Number(value);
-  return Number.isFinite(n) ? n : 0;
+  const n=Number(value);
+  return Number.isFinite(n)?n:0;
 }
+
 function money(value){
-  return num(value).toLocaleString('ar-SA',{minimumFractionDigits:2,maximumFractionDigits:2})+' ر.س';
+  return num(value).toLocaleString('ar-SA',{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  })+' ر.س';
 }
+
 function dateText(value){
   if(!value)return '—';
-  const d = new Date(value);
+  const d=new Date(value);
   if(Number.isNaN(d.getTime()))return esc(value);
   return d.toLocaleDateString('ar-SA');
 }
+
 function today(){
   const d=new Date();
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
+
 function toast(message,type='success'){
   $('toastRoot').innerHTML=`<div class="toast ${type==='error'?'error':'success'}">${esc(message)}</div>`;
-  setTimeout(()=>$('toastRoot').innerHTML='',4000);
+  clearTimeout(toast.timer);
+  toast.timer=setTimeout(()=>$('toastRoot').innerHTML='',4500);
 }
+
 function setLoading(value){
+  state.loading=Boolean(value);
   $('loader').classList.toggle('hidden',!value);
 }
+
 function errorMessage(error){
   console.error(error);
-  return error?.message || 'حدث خطأ غير متوقع.';
+  return error?.message||'حدث خطأ غير متوقع.';
 }
+
 function requireBusiness(){
   if(!state.business){
-    toast('أنشئ منشأة أو اربط حسابك بمنشأة أولًا.','error');
+    toast('أنشئ منشأتك أولًا قبل إضافة البيانات.','error');
     navigate('company');
     return false;
   }
   return true;
 }
 
-/* ---------------- تسجيل الدخول ---------------- */
+/* القائمة الجانبية للموبايل */
+function toggleMobileMenu(){
+  $('sidebar').classList.toggle('open');
+  $('menuOverlay').classList.toggle('open');
+}
 
+function closeMobileMenu(){
+  $('sidebar').classList.remove('open');
+  $('menuOverlay').classList.remove('open');
+}
+
+/* تسجيل الدخول */
 function toggleAuthMode(){
   state.authMode=state.authMode==='login'?'signup':'login';
   const signup=state.authMode==='signup';
+
   $('authTitle').textContent=signup?'إنشاء حساب جديد':'مرحبًا بعودتك';
   $('authSubtitle').textContent=signup?'أنشئ حسابك للوصول إلى البرنامج.':'سجّل دخولك للوصول إلى لوحة التحكم.';
   $('nameField').classList.toggle('hidden',!signup);
@@ -511,26 +494,33 @@ function toggleAuthMode(){
   $('switchMode').textContent=signup?'تسجيل الدخول':'إنشاء حساب';
 }
 
-$('authForm').addEventListener('submit',async e=>{
-  e.preventDefault();
+$('authForm').addEventListener('submit',async event=>{
+  event.preventDefault();
+
   const email=$('authEmail').value.trim();
   const password=$('authPassword').value;
+
   setLoading(true);
   try{
     let result;
+
     if(state.authMode==='signup'){
       result=await db.auth.signUp({
-        email,password,
+        email,
+        password,
         options:{data:{full_name:$('authName').value.trim()}}
       });
     }else{
       result=await db.auth.signInWithPassword({email,password});
     }
+
     if(result.error)throw result.error;
+
     if(state.authMode==='signup'&&!result.data.session){
       toast('تم إنشاء الحساب. راجع بريدك الإلكتروني لتأكيد الحساب.');
       return;
     }
+
     state.user=result.data.user;
     await startSession();
   }catch(error){
@@ -542,7 +532,11 @@ $('authForm').addEventListener('submit',async e=>{
 
 async function forgotPassword(){
   const email=$('authEmail').value.trim();
-  if(!email){toast('اكتب بريدك الإلكتروني أولًا.','error');return;}
+  if(!email){
+    toast('اكتب بريدك الإلكتروني أولًا.','error');
+    return;
+  }
+
   setLoading(true);
   try{
     const {error}=await db.auth.resetPasswordForEmail(email,{
@@ -550,8 +544,11 @@ async function forgotPassword(){
     });
     if(error)throw error;
     toast('إذا كان البريد مسجلًا، ستصلك تعليمات إعادة تعيين كلمة المرور.');
-  }catch(e){toast(errorMessage(e),'error')}
-  finally{setLoading(false)}
+  }catch(error){
+    toast(errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
 async function logout(){
@@ -559,31 +556,40 @@ async function logout(){
   try{
     const {error}=await db.auth.signOut();
     if(error)throw error;
+
     state.user=null;
     state.business=null;
+    state.customers=[];
+    state.suppliers=[];
+    state.invoices=[];
+    state.transactions=[];
+
     $('app').classList.add('hidden');
-    $('bottomNav').classList.add('hidden');
     $('authScreen').classList.remove('hidden');
+    closeMobileMenu();
+    closeModal();
     toast('تم تسجيل الخروج.');
-  }catch(e){toast(errorMessage(e),'error')}
-  finally{setLoading(false)}
+  }catch(error){
+    toast(errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
-/* ---------------- الشركة وبياناتها ---------------- */
-
+/* المنشأة */
 async function startSession(){
   if(!state.user){
     $('loader').classList.add('hidden');
     $('app').classList.add('hidden');
-    $('bottomNav').classList.add('hidden');
     $('authScreen').classList.remove('hidden');
     return;
   }
+
   $('authScreen').classList.add('hidden');
   $('app').classList.remove('hidden');
-  $('bottomNav').classList.remove('hidden');
   $('userEmail').textContent=state.user.email||'';
   $('sidebarEmail').textContent=state.user.email||'';
+
   await loadBusiness();
   await refreshData(false);
   navigate(state.business?'dashboard':'company');
@@ -591,81 +597,74 @@ async function startSession(){
 
 async function loadBusiness(){
   state.business=null;
+  if(!state.user)return;
+
   try{
-    const {data,error}=await db
-      .from('businesses')
+    const {data,error}=await db.from('businesses')
       .select('*')
       .eq('owner_id',state.user.id)
       .limit(1);
+
     if(error)throw error;
-    if(data&&data.length)state.business=data[0];
+    if(data?.length)state.business=data[0];
   }catch(error){
     console.warn('Business lookup:',error);
   }
+
   $('topBusiness').textContent=state.business?.name||'لم يتم تحديد المنشأة';
 }
 
 async function createBusiness(){
-  if(!state.user){toast('سجّل الدخول أولًا.','error');return;}
+  if(!state.user){
+    toast('سجّل الدخول أولًا.','error');
+    return;
+  }
+
   const name=$('newBusinessName')?.value.trim();
-  if(!name){toast('اكتب اسم الشركة.','error');return;}
+  if(!name){
+    toast('اكتب اسم الشركة.','error');
+    return;
+  }
+
   setLoading(true);
   try{
-    const {data,error}=await db.from('businesses').insert({
-      owner_id:state.user.id,
-      name
-    }).select('*').single();
+    const {data,error}=await db.from('businesses')
+      .insert({owner_id:state.user.id,name})
+      .select('*')
+      .single();
+
     if(error)throw error;
+
     state.business=data;
+    $('topBusiness').textContent=data.name;
     await refreshData(false);
     navigate('company');
     toast('تم إنشاء المنشأة.');
-  }catch(e){
-    toast('تعذر إنشاء المنشأة. تأكد من وجود جدول businesses وصلاحياته. '+errorMessage(e),'error');
-  }finally{setLoading(false)}
+  }catch(error){
+    toast('تعذر إنشاء المنشأة. تحقق من جدول businesses وصلاحياته. '+errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
-function makeCompanyCode(){
-  const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  let code='MK-';
-  for(let i=0;i<6;i++)code+=chars[Math.floor(Math.random()*chars.length)];
-  return code;
-}
-
-/*
-  كود الشركة:
-  هذا الجزء يجهّز عرض الكود محليًا فقط.
-  لا يُعتبر كود عضوية فعليًا ولا يربط محاسبين آخرين.
-  التفعيل الحقيقي يتطلب جدول عضويات وRPC آمنًا وصلاحيات RLS.
-*/
+/* تنبيه: لا يتم إنشاء كود عضوية وهمي على أنه كود فعلي */
 function showCompanyCode(){
   if(!requireBusiness())return;
-  let code=state.business.company_code;
-  if(!code){
-    code=makeCompanyCode();
-    toast('تم إنشاء كود للعرض فقط. يلزم حفظه في قاعدة البيانات وتفعيل صلاحيات العضوية.');
-  }
-  $('companyCodeDisplay').textContent=code;
+  toast('ربط المحاسبين يحتاج إلى جدول عضويات ودالة انضمام آمنة في Supabase.','error');
 }
 
 async function copyCompanyCode(){
-  const code=$('companyCodeDisplay')?.textContent;
-  if(!code||code==='لم يتم إنشاء الكود')return;
-  try{
-    await navigator.clipboard.writeText(code);
-    toast('تم نسخ الكود المعروض.');
-  }catch{
-    toast('تعذر النسخ تلقائيًا. حدد الكود وانسخه يدويًا.','error');
-  }
+  toast('لم يتم تفعيل كود المشاركة الحقيقي بعد.','error');
 }
 
-/* ---------------- تحميل البيانات ---------------- */
-
+/* تحميل البيانات */
 async function safeLoad(table,queryBuilder){
   if(!state.business)return [];
+
   try{
     let query=db.from(table).select('*').eq('business_id',state.business.id);
     if(queryBuilder)query=queryBuilder(query);
+
     const {data,error}=await query;
     if(error)throw error;
     return data||[];
@@ -677,9 +676,11 @@ async function safeLoad(table,queryBuilder){
 
 async function refreshData(showMessage=true){
   if(!state.user)return;
+
   setLoading(true);
   try{
     await loadBusiness();
+
     if(!state.business){
       state.customers=[];
       state.suppliers=[];
@@ -692,23 +693,36 @@ async function refreshData(showMessage=true){
         safeLoad('invoices',q=>q.order('created_at',{ascending:false})),
         safeLoad('cash_transactions',q=>q.order('created_at',{ascending:false}))
       ]);
-      [state.customers,state.suppliers,state.invoices,state.transactions]=results;
+
+      [
+        state.customers,
+        state.suppliers,
+        state.invoices,
+        state.transactions
+      ]=results;
     }
+
     renderPage();
     if(showMessage)toast('تم تحديث البيانات.');
-  }finally{setLoading(false)}
+  }finally{
+    setLoading(false);
+  }
 }
 
-/* ---------------- التنقل ---------------- */
-
+/* التنقل */
 function navigate(page){
   if(!PAGE_TITLES[page])page='dashboard';
+
   if(state.page!==page)state.previousPage=state.page;
   state.page=page;
+
   $('topHeading').textContent=PAGE_TITLES[page];
-  document.querySelectorAll('[data-page]').forEach(btn=>{
-    btn.classList.toggle('active',btn.dataset.page===page);
+
+  document.querySelectorAll('[data-page]').forEach(button=>{
+    button.classList.toggle('active',button.dataset.page===page);
   });
+
+  closeMobileMenu();
   renderPage();
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -718,20 +732,22 @@ function goBack(){
     closeModal();
     return;
   }
+
+  if($('sidebar').classList.contains('open')){
+    closeMobileMenu();
+    return;
+  }
+
   if(state.page!=='dashboard'){
-    navigate(state.previousPage&&state.previousPage!==state.page?state.previousPage:'dashboard');
+    navigate(state.previousPage&&state.previousPage!==state.page?'dashboard':state.previousPage);
   }else{
     toast('أنت في الصفحة الرئيسية.');
   }
 }
-window.addEventListener('popstate',()=>{
-  if($('modalRoot').innerHTML.trim())closeModal();
-  else goBack();
-});
-history.pushState({app:true},'','#app');
 
 function renderPage(){
   if(!$('content'))return;
+
   const pages={
     dashboard:renderDashboard,
     transactions:renderTransactions,
@@ -740,47 +756,65 @@ function renderPage(){
     suppliers:renderSuppliers,
     reports:renderReports,
     company:renderCompany,
-    settings:renderSettings
+    settings:renderSettings,
+    program:renderProgram,
+    privacy:renderPrivacy,
+    about:renderAbout,
+    developers:renderDevelopers
   };
+
   (pages[state.page]||renderDashboard)();
 }
 
-/* ---------------- مكونات الواجهة ---------------- */
-
+/* مكونات الواجهة */
 function pageHead(title,description,button=''){
   return `<div class="page-head"><div><h1>${title}</h1><p>${description}</p></div>${button}</div>`;
 }
+
 function statCard(title,value,icon,foot=''){
   return `<div class="card">
     <div class="stat-top"><span class="stat-label">${title}</span><span class="stat-icon">${icon}</span></div>
     <div class="stat-value">${value}</div><div class="stat-foot">${foot}</div>
   </div>`;
 }
+
 function emptyState(text){
-  return `<div class="empty"><div style="font-size:30px;margin-bottom:10px">▤</div>${text}</div>`;
+  return `<div class="empty"><div style="font-size:28px;margin-bottom:9px">▤</div>${esc(text)}</div>`;
 }
+
 function tableShell(headers,rows){
   if(!rows.length)return emptyState('لا توجد بيانات لعرضها حتى الآن.');
   return `<div class="table-wrap"><table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
 }
 
-/* ---------------- لوحة التحكم ---------------- */
-
+/* لوحة التحكم */
 function renderDashboard(){
   if(!state.business){
-    $('content').innerHTML=pageHead('أهلًا بك في المحاسب الذكي','ابدأ بإنشاء منشأتك لتجهيز مساحة العمل.')+
-      `<div class="card" style="max-width:650px">
+    $('content').innerHTML=pageHead('أهلًا بك في المحاسب الذكي','ابدأ بإنشاء منشأتك لتجهيز مساحة العمل.')
+      +`<div class="card" style="max-width:650px">
         <div class="stat-icon">⌂</div><h2>أنشئ منشأتك الأولى</h2>
-        <p class="muted" style="line-height:2">بعد إنشاء المنشأة، يمكنك البدء في تسجيل الفواتير والعملاء والموردين والحركات المالية.</p>
+        <p class="muted" style="line-height:2">بعد إنشاء المنشأة، يمكنك تسجيل الفواتير والعملاء والموردين والحركات المالية.</p>
         <button class="btn btn-primary" onclick="navigate('company')">إعداد المنشأة ←</button>
       </div>`;
     return;
   }
 
-  const sales=state.invoices.filter(x=>x.invoice_type==='sales').reduce((s,x)=>s+num(x.total_amount),0);
-  const purchases=state.invoices.filter(x=>x.invoice_type==='purchase').reduce((s,x)=>s+num(x.total_amount),0);
-  const received=state.transactions.filter(x=>String(x.transaction_type).toLowerCase().includes('in')||String(x.transaction_type).includes('قبض')).reduce((s,x)=>s+num(x.amount),0);
-  const paid=state.transactions.filter(x=>String(x.transaction_type).toLowerCase().includes('out')||String(x.transaction_type).includes('صرف')).reduce((s,x)=>s+num(x.amount),0);
+  const sales=state.invoices
+    .filter(x=>x.invoice_type==='sales')
+    .reduce((sum,x)=>sum+num(x.total_amount),0);
+
+  const purchases=state.invoices
+    .filter(x=>x.invoice_type==='purchase')
+    .reduce((sum,x)=>sum+num(x.total_amount),0);
+
+  const received=state.transactions
+    .filter(x=>x.transaction_type==='income')
+    .reduce((sum,x)=>sum+num(x.amount),0);
+
+  const paid=state.transactions
+    .filter(x=>x.transaction_type==='expense')
+    .reduce((sum,x)=>sum+num(x.amount),0);
+
   const recent=state.invoices.slice(0,5).map(x=>`<tr>
     <td>${esc(x.invoice_number||x.id)}</td>
     <td>${x.invoice_type==='purchase'?'مشتريات':'مبيعات'}</td>
@@ -788,14 +822,15 @@ function renderDashboard(){
     <td>${money(x.total_amount)}</td>
     <td><span class="badge ${x.status==='paid'?'badge-green':'badge-gold'}">${esc(x.status||'غير محدد')}</span></td>
   </tr>`);
+
   $('content').innerHTML=
     pageHead('لوحة التحكم',`ملخص حسابات ${esc(state.business.name||'منشأتك')}`,
-      `<button class="btn btn-primary" onclick="openInvoiceModal()">＋ فاتورة جديدة</button>`) +
-    `<div class="grid stats">
+      `<button class="btn btn-primary" onclick="openInvoiceModal()">＋ فاتورة جديدة</button>`)
+    +`<div class="grid stats">
       ${statCard('إجمالي المبيعات',money(sales),'↗','إجمالي فواتير المبيعات')}
       ${statCard('إجمالي المشتريات',money(purchases),'↙','إجمالي فواتير المشتريات')}
       ${statCard('عدد العملاء',state.customers.length,'♙','العملاء المسجلون')}
-      ${statCard('عدد الفواتير',state.invoices.length,'▤','جميع الفواتير المسجلة')}
+      ${statCard('عدد الفواتير',state.invoices.length,'▤','جميع الفواتير')}
     </div>
     <div class="grid two-col">
       <section class="card">
@@ -808,32 +843,37 @@ function renderDashboard(){
         <div class="list-row"><span>إضافة مورد جديد</span><button class="btn btn-sm" onclick="openPersonModal('suppliers')">＋ إضافة</button></div>
         <div class="list-row"><span>تسجيل حركة مالية</span><button class="btn btn-sm" onclick="openTransactionModal()">＋ إضافة</button></div>
         <div class="list-row"><span>عرض التقارير</span><button class="btn btn-sm" onclick="navigate('reports')">فتح ←</button></div>
-        <div class="list-row"><span>رصيد الحركات الصافي</span><strong class="gold">${money(received-paid)}</strong></div>
+        <div class="list-row"><span>صافي الحركات المسجلة</span><strong class="gold">${money(received-paid)}</strong></div>
       </section>
     </div>`;
 }
 
-/* ---------------- العملاء والموردون ---------------- */
-
+/* العملاء والموردون */
 function personTable(kind){
   const isCustomer=kind==='customers';
   const data=isCustomer?state.customers:state.suppliers;
-  const nameKey=isCustomer?'customer_name':'supplier_name';
   const title=isCustomer?'العملاء':'الموردون';
+
   const rows=data.map(x=>`<tr>
-    <td>${esc(x[nameKey]||x.name||'—')}</td>
+    <td>${esc(isCustomer?x.name:(x.supplier_name||''))}</td>
     <td>${esc(x.phone||'—')}</td>
-    <td>${esc(x.address||'—')}</td>
+    ${isCustomer?'':`<td>${esc(x.address||'—')}</td>`}
     <td><div class="actions">
       <button class="btn btn-sm" onclick="openPersonModal('${kind}','${esc(x.id)}')">تعديل</button>
       <button class="btn btn-sm btn-danger" onclick="deleteRecord('${kind}','${esc(x.id)}')">حذف</button>
     </div></td>
   </tr>`);
+
+  const headers=isCustomer?['الاسم','الهاتف','الإجراءات']:['الاسم','الهاتف','العنوان','الإجراءات'];
+
   $('content').innerHTML=pageHead(title,'إدارة بيانات '+title,
     `<button class="btn btn-primary" onclick="openPersonModal('${kind}')">＋ إضافة ${isCustomer?'عميل':'مورد'}</button>`)
-    +`<section class="card"><div class="search-row"><input id="personSearch" placeholder="ابحث بالاسم أو الهاتف..." oninput="filterTable('personSearch','personTable')"></div>
-    <div id="personTable">${tableShell(['الاسم','الهاتف','العنوان','الإجراءات'],rows)}</div></section>`;
+    +`<section class="card">
+      <div class="search-row"><input id="personSearch" placeholder="ابحث بالاسم أو الهاتف..." oninput="filterTable('personSearch','personTable')"></div>
+      <div id="personTable">${tableShell(headers,rows)}</div>
+    </section>`;
 }
+
 function renderCustomers(){personTable('customers')}
 function renderSuppliers(){personTable('suppliers')}
 
@@ -841,6 +881,7 @@ function filterTable(inputId,tableId){
   const input=$(inputId);
   const container=$(tableId);
   if(!input||!container)return;
+
   const term=input.value.toLowerCase();
   container.querySelectorAll('tbody tr').forEach(row=>{
     row.style.display=row.innerText.toLowerCase().includes(term)?'':'none';
@@ -849,61 +890,103 @@ function filterTable(inputId,tableId){
 
 function openPersonModal(kind,id=null){
   if(!requireBusiness())return;
+
   const isCustomer=kind==='customers';
-  const data=(isCustomer?state.customers:state.suppliers).find(x=>String(x.id)===String(id));
+  const data=(isCustomer?state.customers:state.suppliers)
+    .find(x=>String(x.id)===String(id));
+
   const title=isCustomer?'عميل':'مورد';
+
   $('modalRoot').innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()">
     <section class="modal">
       <div class="modal-head"><h3>${data?'تعديل '+title:'إضافة '+title+' جديد'}</h3><button class="close-btn" onclick="closeModal()">×</button></div>
       <form onsubmit="savePerson(event,'${kind}','${id||''}')">
         <div class="form-grid">
-          <div class="field full"><label>الاسم *</label><input name="person_name" required value="${esc(data?.[isCustomer?'customer_name':'supplier_name']||data?.name||'')}"></div>
-          <div class="field"><label>رقم الهاتف</label><input name="phone" value="${esc(data?.phone||'')}" inputmode="tel"></div>
-          <div class="field"><label>العنوان</label><input name="address" value="${esc(data?.address||'')}"></div>
-          <div class="field full"><label>ملاحظات</label><textarea name="notes">${esc(data?.notes||'')}</textarea></div>
+          <div class="field full">
+            <label>الاسم *</label>
+            <input name="person_name" required value="${esc(isCustomer?(data?.name||''):(data?.supplier_name||''))}">
+          </div>
+          <div class="field">
+            <label>رقم الهاتف</label>
+            <input name="phone" value="${esc(data?.phone||'')}" inputmode="tel">
+          </div>
+          ${isCustomer?'':`
+          <div class="field">
+            <label>العنوان</label>
+            <input name="address" value="${esc(data?.address||'')}">
+          </div>
+          <div class="field full">
+            <label>ملاحظات</label>
+            <textarea name="notes">${esc(data?.notes||'')}</textarea>
+          </div>`}
         </div>
         <div style="display:flex;justify-content:flex-end;gap:9px;margin-top:20px">
           <button type="button" class="btn" onclick="closeModal()">إلغاء</button>
           <button class="btn btn-primary">حفظ البيانات</button>
         </div>
       </form>
-    </section></div>`;
+    </section>
+  </div>`;
 }
 
 async function savePerson(event,kind,id){
   event.preventDefault();
   if(!requireBusiness())return;
-  const form=event.target;
-  const f=new FormData(form);
+
+  const f=new FormData(event.target);
   const isCustomer=kind==='customers';
-  const payload={
+  const name=String(f.get('person_name')||'').trim();
+  const phone=String(f.get('phone')||'').trim();
+
+  if(!name){
+    toast('اكتب الاسم أولًا.','error');
+    return;
+  }
+
+  /*
+    customers schema:
+    id, business_id, name, phone, created_at
+    لا نرسل address أو notes إلى جدول العملاء.
+  */
+  const payload=isCustomer?{
     business_id:state.business.id,
-    [isCustomer?'customer_name':'supplier_name']:String(f.get('person_name')||'').trim(),
-    phone:String(f.get('phone')||'').trim(),
+    name,
+    phone
+  }:{
+    business_id:state.business.id,
+    supplier_name:name,
+    phone,
     address:String(f.get('address')||'').trim(),
     notes:String(f.get('notes')||'').trim()
   };
+
   setLoading(true);
   try{
     let query;
+
     if(id){
-      query=db.from(kind).update(payload).eq('id',id).eq('business_id',state.business.id);
+      query=db.from(kind).update(payload)
+        .eq('id',id)
+        .eq('business_id',state.business.id);
     }else{
       query=db.from(kind).insert(payload);
     }
+
     const {error}=await query;
     if(error)throw error;
+
     closeModal();
     await refreshData(false);
     navigate(kind);
-    toast('تم حفظ البيانات.');
-  }catch(e){
-    toast('تعذر الحفظ. راجع أسماء الأعمدة وصلاحيات قاعدة البيانات. '+errorMessage(e),'error');
-  }finally{setLoading(false)}
+    toast('تم حفظ البيانات بنجاح.');
+  }catch(error){
+    toast('تعذر الحفظ. تحقق من أسماء الأعمدة وصلاحيات قاعدة البيانات. '+errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
-/* ---------------- الفواتير ---------------- */
-
+/* الفواتير */
 function renderInvoices(){
   const rows=state.invoices.map(x=>`<tr>
     <td>${esc(x.invoice_number||String(x.id).slice(0,8))}</td>
@@ -919,49 +1002,103 @@ function renderInvoices(){
       <button class="btn btn-sm btn-danger" onclick="deleteRecord('invoices','${esc(x.id)}')">حذف</button>
     </div></td>
   </tr>`);
+
   $('content').innerHTML=pageHead('الفواتير','إدارة فواتير المبيعات والمشتريات',
     `<button class="btn btn-primary" onclick="openInvoiceModal()">＋ فاتورة جديدة</button>`)
-    +`<section class="card"><div class="search-row"><input id="invoiceSearch" placeholder="ابحث برقم الفاتورة..." oninput="filterTable('invoiceSearch','invoiceTable')"></div>
-    <div id="invoiceTable">${tableShell(['رقم الفاتورة','النوع','التاريخ','الإجمالي','المدفوع','المتبقي','الحالة','الإجراءات'],rows)}</div></section>`;
+    +`<section class="card">
+      <div class="search-row"><input id="invoiceSearch" placeholder="ابحث برقم الفاتورة..." oninput="filterTable('invoiceSearch','invoiceTable')"></div>
+      <div id="invoiceTable">${tableShell(['رقم الفاتورة','النوع','التاريخ','الإجمالي','المدفوع','المتبقي','الحالة','الإجراءات'],rows)}</div>
+    </section>`;
 }
 
 function openInvoiceModal(){
   if(!requireBusiness())return;
+
   $('modalRoot').innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()">
-  <section class="modal">
-    <div class="modal-head"><h3>إنشاء فاتورة جديدة</h3><button class="close-btn" onclick="closeModal()">×</button></div>
-    <form onsubmit="saveInvoice(event)">
-      <div class="form-grid">
-        <div class="field"><label>نوع الفاتورة</label><select name="invoice_type"><option value="sales">مبيعات</option><option value="purchase">مشتريات</option></select></div>
-        <div class="field"><label>رقم الفاتورة *</label><input name="invoice_number" required value="INV-${Date.now().toString().slice(-8)}"></div>
-        <div class="field"><label>تاريخ الفاتورة</label><input name="invoice_date" type="date" required value="${today()}"></div>
-        <div class="field"><label>الإجمالي (ر.س) *</label><input name="total_amount" type="number" min="0" step="0.01" required></div>
-        <div class="field"><label>المبلغ المدفوع</label><input name="paid_amount" type="number" min="0" step="0.01" value="0"></div>
-        <div class="field"><label>طريقة الدفع</label><select name="payment_method"><option value="cash">نقدي</option><option value="bank">تحويل بنكي</option><option value="credit">آجل</option></select></div>
-        <div class="field"><label>تاريخ الاستحقاق</label><input name="due_date" type="date"></div>
-        <div class="field"><label>الحالة</label><select name="status"><option value="unpaid">غير مدفوعة</option><option value="partial">مدفوعة جزئيًا</option><option value="paid">مدفوعة</option></select></div>
-        <div class="field full"><label>الوصف</label><textarea name="description" placeholder="تفاصيل الفاتورة..."></textarea></div>
-      </div>
-      <p class="small muted">هذه النسخة تسجل إجمالي الفاتورة فقط؛ لا تحتوي على بنود أصناف أو ضريبة قيمة مضافة مفصلة.</p>
-      <div style="display:flex;justify-content:flex-end;gap:9px;margin-top:18px">
-        <button type="button" class="btn" onclick="closeModal()">إلغاء</button>
-        <button class="btn btn-primary">حفظ الفاتورة</button>
-      </div>
-    </form>
-  </section></div>`;
+    <section class="modal">
+      <div class="modal-head"><h3>إنشاء فاتورة جديدة</h3><button class="close-btn" onclick="closeModal()">×</button></div>
+      <form onsubmit="saveInvoice(event)">
+        <div class="form-grid">
+          <div class="field">
+            <label>نوع الفاتورة</label>
+            <select name="invoice_type">
+              <option value="sales">مبيعات</option>
+              <option value="purchase">مشتريات</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>رقم الفاتورة *</label>
+            <input name="invoice_number" required value="INV-${Date.now().toString().slice(-8)}">
+          </div>
+          <div class="field">
+            <label>تاريخ الفاتورة</label>
+            <input name="invoice_date" type="date" required value="${today()}">
+          </div>
+          <div class="field">
+            <label>الإجمالي (ر.س) *</label>
+            <input name="total_amount" type="number" min="0.01" step="0.01" required>
+          </div>
+          <div class="field">
+            <label>المبلغ المدفوع</label>
+            <input name="paid_amount" type="number" min="0" step="0.01" value="0">
+          </div>
+          <div class="field">
+            <label>طريقة الدفع</label>
+            <select name="payment_method">
+              <option value="cash">نقدي</option>
+              <option value="bank">تحويل بنكي</option>
+              <option value="credit">آجل</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>تاريخ الاستحقاق</label>
+            <input name="due_date" type="date">
+          </div>
+          <div class="field">
+            <label>الحالة</label>
+            <select name="status">
+              <option value="unpaid">غير مدفوعة</option>
+              <option value="partial">مدفوعة جزئيًا</option>
+              <option value="paid">مدفوعة</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>الوصف</label>
+            <textarea name="description" placeholder="تفاصيل الفاتورة..."></textarea>
+          </div>
+        </div>
+        <p class="small muted">هذه النسخة تسجل إجمالي الفاتورة فقط ولا تحتوي على بنود أصناف أو ضريبة مفصلة.</p>
+        <div style="display:flex;justify-content:flex-end;gap:9px;margin-top:18px">
+          <button type="button" class="btn" onclick="closeModal()">إلغاء</button>
+          <button class="btn btn-primary">حفظ الفاتورة</button>
+        </div>
+      </form>
+    </section>
+  </div>`;
 }
 
 async function saveInvoice(event){
   event.preventDefault();
   if(!requireBusiness())return;
+
   const f=new FormData(event.target);
   const total=num(f.get('total_amount'));
   const paid=num(f.get('paid_amount'));
-  if(paid>total){toast('المبلغ المدفوع لا يمكن أن يتجاوز إجمالي الفاتورة.','error');return;}
+
+  if(total<=0){
+    toast('الإجمالي يجب أن يكون أكبر من صفر.','error');
+    return;
+  }
+
+  if(paid<0||paid>total){
+    toast('المبلغ المدفوع يجب ألا يقل عن صفر أو يتجاوز إجمالي الفاتورة.','error');
+    return;
+  }
+
   const payload={
     business_id:state.business.id,
     invoice_type:f.get('invoice_type'),
-    invoice_number:String(f.get('invoice_number')).trim(),
+    invoice_number:String(f.get('invoice_number')||'').trim(),
     invoice_date:f.get('invoice_date')||today(),
     total_amount:total,
     paid_amount:paid,
@@ -970,316 +1107,560 @@ async function saveInvoice(event){
     description:String(f.get('description')||'').trim(),
     status:paid>=total?'paid':paid>0?'partial':'unpaid'
   };
+
   setLoading(true);
   try{
     const {error}=await db.from('invoices').insert(payload);
     if(error)throw error;
+
     closeModal();
     await refreshData(false);
     navigate('invoices');
     toast('تم حفظ الفاتورة.');
-  }catch(e){
-    toast('تعذر حفظ الفاتورة. راجع أعمدة جدول invoices وصلاحياته. '+errorMessage(e),'error');
-  }finally{setLoading(false)}
+  }catch(error){
+    toast('تعذر حفظ الفاتورة. تحقق من جدول invoices وصلاحياته. '+errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
 function viewInvoice(id){
   const x=state.invoices.find(v=>String(v.id)===String(id));
   if(!x)return;
+
   const remaining=num(x.total_amount)-num(x.paid_amount);
+
   $('modalRoot').innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()">
-  <section class="modal">
-    <div class="modal-head no-print"><h3>تفاصيل الفاتورة</h3><button class="close-btn" onclick="closeModal()">×</button></div>
-    <div class="invoice-paper" id="invoicePaper">
-      <div style="display:flex;justify-content:space-between;gap:15px;align-items:start">
-        <div><h2>المحاسب الذكي</h2><p>فاتورة ${x.invoice_type==='purchase'?'مشتريات':'مبيعات'}</p></div>
-        <div style="text-align:left"><h3>${esc(x.invoice_number||x.id)}</h3><p>${dateText(x.invoice_date)}</p></div>
+    <section class="modal">
+      <div class="modal-head no-print"><h3>تفاصيل الفاتورة</h3><button class="close-btn" onclick="closeModal()">×</button></div>
+      <div class="invoice-paper" id="invoicePaper">
+        <div style="display:flex;justify-content:space-between;gap:15px;align-items:start">
+          <div><h2>المحاسب الذكي</h2><p>فاتورة ${x.invoice_type==='purchase'?'مشتريات':'مبيعات'}</p></div>
+          <div style="text-align:left"><h3>${esc(x.invoice_number||x.id)}</h3><p>${dateText(x.invoice_date)}</p></div>
+        </div>
+        <hr style="border:0;border-top:1px solid #ddd;margin:20px 0">
+        <p>المنشأة: ${esc(state.business?.name||'—')}</p>
+        <p>الوصف: ${esc(x.description||'—')}</p>
+        <table><tbody>
+          <tr><th>الإجمالي</th><td>${money(x.total_amount)}</td></tr>
+          <tr><th>المدفوع</th><td>${money(x.paid_amount)}</td></tr>
+          <tr><th>المتبقي</th><td>${money(remaining)}</td></tr>
+          <tr><th>طريقة الدفع</th><td>${esc(x.payment_method||'—')}</td></tr>
+          <tr><th>الحالة</th><td>${esc(x.status||'—')}</td></tr>
+        </tbody></table>
+        <p style="margin-top:30px;text-align:center">شكرًا لتعاملكم معنا</p>
       </div>
-      <hr style="border:0;border-top:1px solid #ddd;margin:20px 0">
-      <p>المنشأة: ${esc(state.business?.name||'—')}</p>
-      <p>الوصف: ${esc(x.description||'—')}</p>
-      <table><tbody>
-        <tr><th>الإجمالي</th><td>${money(x.total_amount)}</td></tr>
-        <tr><th>المدفوع</th><td>${money(x.paid_amount)}</td></tr>
-        <tr><th>المتبقي</th><td>${money(remaining)}</td></tr>
-        <tr><th>طريقة الدفع</th><td>${esc(x.payment_method||'—')}</td></tr>
-        <tr><th>الحالة</th><td>${esc(x.status||'—')}</td></tr>
-      </tbody></table>
-      <p style="margin-top:30px;text-align:center">شكرًا لتعاملكم معنا</p>
-    </div>
-    <div class="no-print" style="display:flex;gap:9px;justify-content:flex-end;margin-top:16px">
-      <button class="btn" onclick="closeModal()">إغلاق</button>
-      <button class="btn btn-primary" onclick="printInvoice()">طباعة / حفظ PDF</button>
-    </div>
-  </section></div>`;
+      <div class="no-print" style="display:flex;gap:9px;justify-content:flex-end;margin-top:16px">
+        <button class="btn" onclick="closeModal()">إغلاق</button>
+        <button class="btn btn-primary" onclick="printInvoice()">طباعة / حفظ PDF</button>
+      </div>
+    </section>
+  </div>`;
 }
 
 function printInvoice(){
   const paper=$('invoicePaper');
   if(!paper)return;
+
   const win=window.open('','_blank');
-  if(!win){toast('اسمح بفتح النوافذ المنبثقة للطباعة.','error');return;}
+  if(!win){
+    toast('اسمح بفتح النوافذ المنبثقة للطباعة.','error');
+    return;
+  }
+
   win.document.write(`<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>فاتورة</title>
-  <style>body{font-family:Tahoma,Arial;padding:30px;color:#172033}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ddd;padding:12px;text-align:right}th{background:#eef1f5}hr{border:0;border-top:1px solid #ddd}</style>
-  </head><body>${paper.outerHTML}<script>window.onload=()=>window.print()<\/script></body></html>`);
+    <style>
+      body{font-family:Tahoma,Arial;padding:30px;color:#172033}
+      table{width:100%;border-collapse:collapse}
+      td,th{border:1px solid #ddd;padding:12px;text-align:right}
+      th{background:#eef1f5}
+      hr{border:0;border-top:1px solid #ddd}
+    </style>
+    </head><body>${paper.outerHTML}<script>window.onload=()=>window.print()<\/script></body></html>`);
   win.document.close();
 }
 
+/* QR */
 function showInvoiceQR(id){
   const x=state.invoices.find(v=>String(v.id)===String(id));
   if(!x)return;
+
+  if(typeof QRCode==='undefined'){
+    toast('تعذر تحميل مكتبة QR. تحقق من اتصال الإنترنت.','error');
+    return;
+  }
+
   $('modalRoot').innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()">
     <section class="modal" style="text-align:center">
       <div class="modal-head"><h3>رمز QR للفاتورة</h3><button class="close-btn" onclick="closeModal()">×</button></div>
-      <p class="muted">الرمز يحتوي على ملخص محدود للفاتورة، وليس رابطًا عامًا آمنًا لقاعدة البيانات.</p>
-      <div id="qrBox" style="display:flex;justify-content:center;background:white;padding:20px;border-radius:12px;width:max-content;max-width:100%;margin:20px auto"></div>
+      <p class="muted">الرمز يحتوي على ملخص للفاتورة، وليس رابطًا عامًا لقاعدة البيانات.</p>
+      <div id="qrBox" style="display:flex;justify-content:center;align-items:center;background:white;padding:18px;border-radius:12px;width:max-content;max-width:100%;margin:20px auto;min-height:245px;min-width:245px"></div>
       <p>رقم الفاتورة: <strong>${esc(x.invoice_number||x.id)}</strong></p>
       <p>الإجمالي: <strong>${money(x.total_amount)}</strong></p>
       <button class="btn btn-primary" onclick="downloadQR()">حفظ صورة QR</button>
-    </section></div>`;
+    </section>
+  </div>`;
+
   const payload=JSON.stringify({
     app:'المحاسب الذكي',
     invoice_number:x.invoice_number||String(x.id),
     invoice_type:x.invoice_type,
     invoice_date:x.invoice_date,
-    total_amount:x.total_amount,
+    total_amount:num(x.total_amount),
     currency:'SAR'
   });
-  new QRCode($('qrBox'),{text:payload,width:210,height:210,correctLevel:QRCode.CorrectLevel.M});
+
+  try{
+    new QRCode($('qrBox'),{
+      text:payload,
+      width:210,
+      height:210,
+      colorDark:'#000000',
+      colorLight:'#ffffff',
+      correctLevel:QRCode.CorrectLevel.M
+    });
+  }catch(error){
+    console.error(error);
+    $('qrBox').innerHTML='<p style="color:#b00">تعذر إنشاء الرمز. حاول مرة أخرى.</p>';
+  }
 }
+
 function downloadQR(){
-  const canvas=$('qrBox')?.querySelector('canvas');
-  const img=$('qrBox')?.querySelector('img');
-  const url=canvas?.toDataURL('image/png')||img?.src;
-  if(!url){toast('لم يتم تجهيز رمز QR بعد.','error');return;}
+  const box=$('qrBox');
+  if(!box){
+    toast('افتح رمز QR أولًا.','error');
+    return;
+  }
+
+  const canvas=box.querySelector('canvas');
+  const img=box.querySelector('img');
+  let url='';
+
+  if(canvas){
+    try{url=canvas.toDataURL('image/png')}catch(error){}
+  }
+
+  if(!url&&img&&img.complete&&img.naturalWidth>0){
+    url=img.src;
+  }
+
+  if(!url){
+    toast('لم يتم تجهيز صورة QR بعد. انتظر لحظة ثم حاول مرة أخرى.','error');
+    return;
+  }
+
   const a=document.createElement('a');
-  a.href=url;a.download='invoice-qr.png';a.click();
+  a.href=url;
+  a.download='invoice-qr.png';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 }
 
-/* ---------------- الحركات المالية ---------------- */
-
+/* الخزينة والحركات المالية */
 function renderTransactions(){
   const rows=state.transactions.map(x=>`<tr>
     <td>${dateText(x.transaction_date||x.created_at)}</td>
-    <td>${esc(x.transaction_type||'—')}</td>
+    <td><span class="badge ${x.transaction_type==='income'?'badge-green':'badge-red'}">${x.transaction_type==='income'?'إيراد / قبض':x.transaction_type==='expense'?'مصروف / صرف':esc(x.transaction_type||'—')}</span></td>
     <td>${esc(x.description||'—')}</td>
     <td>${money(x.amount)}</td>
     <td><button class="btn btn-sm btn-danger" onclick="deleteRecord('cash_transactions','${esc(x.id)}')">حذف</button></td>
   </tr>`);
+
+  const income=state.transactions.filter(x=>x.transaction_type==='income')
+    .reduce((s,x)=>s+num(x.amount),0);
+
+  const expense=state.transactions.filter(x=>x.transaction_type==='expense')
+    .reduce((s,x)=>s+num(x.amount),0);
+
   $('content').innerHTML=pageHead('الخزينة والحركات المالية','تسجيل ومراجعة المقبوضات والمدفوعات',
     `<button class="btn btn-primary" onclick="openTransactionModal()">＋ حركة جديدة</button>`)
     +`<div class="grid stats">
-      ${statCard('عدد الحركات',state.transactions.length,'⇄','جميع الحركات المسجلة')}
-      ${statCard('إجمالي المبالغ',money(state.transactions.reduce((s,x)=>s+num(x.amount),0)),'ر.س','مجموع المبالغ المسجلة')}
-    </div><section class="card">${tableShell(['التاريخ','نوع الحركة','الوصف','المبلغ','الإجراءات'],rows)}</section>`;
+      ${statCard('عدد الحركات',state.transactions.length,'⇄','جميع الحركات')}
+      ${statCard('إجمالي الإيرادات',money(income),'↗','الحركات من نوع income')}
+      ${statCard('إجمالي المصروفات',money(expense),'↙','الحركات من نوع expense')}
+      ${statCard('الصافي',money(income-expense),'ر.س','الإيرادات ناقص المصروفات')}
+    </div>
+    <section class="card">${tableShell(['التاريخ','نوع الحركة','الوصف','المبلغ','الإجراءات'],rows)}</section>`;
 }
 
 function openTransactionModal(){
   if(!requireBusiness())return;
+
   $('modalRoot').innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()">
-  <section class="modal">
-    <div class="modal-head"><h3>تسجيل حركة مالية</h3><button class="close-btn" onclick="closeModal()">×</button></div>
-    <form onsubmit="saveTransaction(event)">
-      <div class="form-grid">
-        <div class="field"><label>التاريخ</label><input name="transaction_date" type="date" required value="${today()}"></div>
-        <div class="field"><label>نوع الحركة</label><select name="transaction_type"><option value="in">قبض / إيراد</option><option value="out">صرف / مصروف</option></select></div>
-        <div class="field full"><label>المبلغ (ر.س)</label><input name="amount" type="number" min="0.01" step="0.01" required></div>
-        <div class="field full"><label>الوصف</label><textarea name="description" required></textarea></div>
-      </div>
-      <div style="display:flex;justify-content:flex-end;gap:9px;margin-top:18px">
-        <button type="button" class="btn" onclick="closeModal()">إلغاء</button>
-        <button class="btn btn-primary">حفظ الحركة</button>
-      </div>
-    </form>
-  </section></div>`;
+    <section class="modal">
+      <div class="modal-head"><h3>تسجيل حركة مالية</h3><button class="close-btn" onclick="closeModal()">×</button></div>
+      <form onsubmit="saveTransaction(event)">
+        <div class="form-grid">
+          <div class="field">
+            <label>التاريخ</label>
+            <input name="transaction_date" type="date" required value="${today()}">
+          </div>
+          <div class="field">
+            <label>نوع الحركة</label>
+            <select name="transaction_type" required>
+              <option value="income">قبض / إيراد</option>
+              <option value="expense">صرف / مصروف</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>المبلغ (ر.س)</label>
+            <input name="amount" type="number" min="0.01" step="0.01" required>
+          </div>
+          <div class="field full">
+            <label>الوصف</label>
+            <textarea name="description" required></textarea>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:9px;margin-top:18px">
+          <button type="button" class="btn" onclick="closeModal()">إلغاء</button>
+          <button class="btn btn-primary">حفظ الحركة</button>
+        </div>
+      </form>
+    </section>
+  </div>`;
 }
 
 async function saveTransaction(event){
   event.preventDefault();
   if(!requireBusiness())return;
+
   const f=new FormData(event.target);
+  const amount=num(f.get('amount'));
+  const type=String(f.get('transaction_type')||'');
+
+  if(!['income','expense'].includes(type)){
+    toast('نوع الحركة غير صحيح.','error');
+    return;
+  }
+
+  if(amount<=0){
+    toast('المبلغ يجب أن يكون أكبر من صفر.','error');
+    return;
+  }
+
   const payload={
     business_id:state.business.id,
     transaction_date:f.get('transaction_date')||today(),
-    transaction_type:f.get('transaction_type'),
-    amount:num(f.get('amount')),
+    transaction_type:type,
+    amount,
     description:String(f.get('description')||'').trim()
   };
+
   setLoading(true);
   try{
     const {error}=await db.from('cash_transactions').insert(payload);
     if(error)throw error;
+
     closeModal();
     await refreshData(false);
     navigate('transactions');
     toast('تم حفظ الحركة المالية.');
-  }catch(e){
-    toast('تعذر حفظ الحركة. راجع أعمدة cash_transactions. '+errorMessage(e),'error');
-  }finally{setLoading(false)}
+  }catch(error){
+    toast('تعذر حفظ الحركة. تحقق من أعمدة cash_transactions وصلاحياته. '+errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
-/* ---------------- حذف البيانات ---------------- */
-
+/* حذف السجلات */
 async function deleteRecord(table,id){
   if(!requireBusiness())return;
+
   if(!confirm('هل أنت متأكد من حذف هذا السجل؟ لا يمكن التراجع عن الحذف.'))return;
+
   setLoading(true);
   try{
     const {error}=await db.from(table).delete()
-      .eq('id',id).eq('business_id',state.business.id);
+      .eq('id',id)
+      .eq('business_id',state.business.id);
+
     if(error)throw error;
+
     await refreshData(false);
     navigate(state.page);
     toast('تم حذف السجل.');
-  }catch(e){
-    toast('تعذر حذف السجل. '+errorMessage(e),'error');
-  }finally{setLoading(false)}
+  }catch(error){
+    toast('تعذر حذف السجل. '+errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
-function closeModal(){$('modalRoot').innerHTML=''}
+function closeModal(){
+  $('modalRoot').innerHTML='';
+}
 
-/* ---------------- التقارير ---------------- */
-
+/* التقارير */
 function renderReports(){
-  const sales=state.invoices.filter(x=>x.invoice_type==='sales').reduce((s,x)=>s+num(x.total_amount),0);
-  const purchases=state.invoices.filter(x=>x.invoice_type==='purchase').reduce((s,x)=>s+num(x.total_amount),0);
-  const salesPaid=state.invoices.filter(x=>x.invoice_type==='sales').reduce((s,x)=>s+num(x.paid_amount),0);
-  const purchasePaid=state.invoices.filter(x=>x.invoice_type==='purchase').reduce((s,x)=>s+num(x.paid_amount),0);
-  const receivable=state.invoices.filter(x=>x.invoice_type==='sales').reduce((s,x)=>s+Math.max(0,num(x.total_amount)-num(x.paid_amount)),0);
-  const payable=state.invoices.filter(x=>x.invoice_type==='purchase').reduce((s,x)=>s+Math.max(0,num(x.total_amount)-num(x.paid_amount)),0);
-  $('content').innerHTML=pageHead('التقارير المالية','ملخص مبسط للأرقام المسجلة في البرنامج',
+  const sales=state.invoices.filter(x=>x.invoice_type==='sales')
+    .reduce((s,x)=>s+num(x.total_amount),0);
+
+  const purchases=state.invoices.filter(x=>x.invoice_type==='purchase')
+    .reduce((s,x)=>s+num(x.total_amount),0);
+
+  const salesPaid=state.invoices.filter(x=>x.invoice_type==='sales')
+    .reduce((s,x)=>s+num(x.paid_amount),0);
+
+  const purchasePaid=state.invoices.filter(x=>x.invoice_type==='purchase')
+    .reduce((s,x)=>s+num(x.paid_amount),0);
+
+  const receivable=state.invoices.filter(x=>x.invoice_type==='sales')
+    .reduce((s,x)=>s+Math.max(0,num(x.total_amount)-num(x.paid_amount)),0);
+
+  const payable=state.invoices.filter(x=>x.invoice_type==='purchase')
+    .reduce((s,x)=>s+Math.max(0,num(x.total_amount)-num(x.paid_amount)),0);
+
+  $('content').innerHTML=pageHead('التقارير المالية','ملخص للأرقام المسجلة في البرنامج',
     `<button class="btn" onclick="window.print()">طباعة التقرير</button>`)
     +`<div class="grid stats">
-      ${statCard('إجمالي المبيعات',money(sales),'↗','قبل أي تسويات')}
-      ${statCard('إجمالي المشتريات',money(purchases),'↙','قبل أي تسويات')}
-      ${statCard('مستحقات العملاء',money(receivable),'♙','متبقي فواتير المبيعات')}
-      ${statCard('مستحقات الموردين',money(payable),'♧','متبقي فواتير المشتريات')}
+      ${statCard('إجمالي المبيعات',money(sales),'↗','فواتير المبيعات')}
+      ${statCard('إجمالي المشتريات',money(purchases),'↙','فواتير المشتريات')}
+      ${statCard('مستحقات العملاء',money(receivable),'♙','المتبقي من المبيعات')}
+      ${statCard('مستحقات الموردين',money(payable),'♧','المتبقي من المشتريات')}
     </div>
     <div class="grid two-col">
-      <section class="card"><div class="card-title"><h3>ملخص الفواتير</h3></div>
+      <section class="card">
+        <div class="card-title"><h3>ملخص الفواتير</h3></div>
         <div class="list-row"><span>عدد فواتير المبيعات</span><strong>${state.invoices.filter(x=>x.invoice_type==='sales').length}</strong></div>
         <div class="list-row"><span>عدد فواتير المشتريات</span><strong>${state.invoices.filter(x=>x.invoice_type==='purchase').length}</strong></div>
         <div class="list-row"><span>المبالغ المحصلة من المبيعات</span><strong class="good">${money(salesPaid)}</strong></div>
         <div class="list-row"><span>المبالغ المدفوعة للمشتريات</span><strong class="bad">${money(purchasePaid)}</strong></div>
       </section>
-      <section class="card"><div class="card-title"><h3>مقارنة إجمالية</h3></div>
+      <section class="card">
+        <div class="card-title"><h3>مقارنة إجمالية</h3></div>
         <p class="muted">الفرق بين إجمالي المبيعات والمشتريات المسجلة:</p>
         <div class="stat-value">${money(sales-purchases)}</div>
-        <p class="small muted">هذا الرقم ليس صافي ربح محاسبي معتمدًا؛ إذ لا يشمل جميع المصروفات والتسويات والضرائب.</p>
+        <p class="small muted" style="line-height:1.9">هذا الرقم ليس صافي ربح محاسبي معتمدًا؛ إذ لا يشمل جميع المصروفات والتسويات والضرائب.</p>
       </section>
     </div>`;
 }
 
-/* ---------------- الشركة والمحاسبون ---------------- */
-
+/* الشركة والمحاسبون */
 function renderCompany(){
   if(!state.business){
     $('content').innerHTML=pageHead('إعداد الشركة','أنشئ منشأتك لبدء استخدام البرنامج.')
       +`<section class="card" style="max-width:650px">
         <form onsubmit="event.preventDefault();createBusiness()">
-          <div class="field"><label>اسم المنشأة</label><input id="newBusinessName" required placeholder="مثال: شركة محمد كرم للمحاسبة"></div>
+          <div class="field">
+            <label>اسم المنشأة</label>
+            <input id="newBusinessName" required placeholder="مثال: شركة محمد كرم للمحاسبة">
+          </div>
           <button class="btn btn-primary" style="margin-top:15px">إنشاء المنشأة</button>
         </form>
         <hr style="border:0;border-top:1px solid var(--border);margin:25px 0">
         <h3>الانضمام إلى شركة</h3>
-        <p class="muted" style="line-height:1.8">الانضمام بكود الشركة يحتاج إلى تفعيل نظام عضويات آمن في قاعدة البيانات. لا تدخل كودًا هنا باعتباره وسيلة ربط فعالة قبل إعداد هذه الصلاحيات.</p>
+        <p class="muted" style="line-height:2">ميزة الانضمام بكود الشركة غير مفعلة بعد. لن يتم قبول كود شكلي على أنه كود مشاركة حقيقي.</p>
       </section>`;
     return;
   }
 
   const business=state.business;
-  $('content').innerHTML=pageHead('الشركة والمحاسبون','بيانات المنشأة وإعدادات الربط بين أعضاء الفريق.')
+
+  $('content').innerHTML=pageHead('الشركة والمحاسبون','بيانات المنشأة وإعدادات فريق العمل.')
     +`<div class="grid two-col">
       <section class="card">
-        <div class="card-title"><h3>بيانات المنشأة</h3><span class="badge badge-green">نشطة</span></div>
-        <div class="field"><label>اسم المنشأة</label><input id="businessName" value="${esc(business.name||'')}"></div>
+        <div class="card-title"><h3>بيانات المنشأة</h3><span class="badge badge-green">مسجلة</span></div>
+        <div class="field">
+          <label>اسم المنشأة</label>
+          <input id="businessName" value="${esc(business.name||'')}">
+        </div>
         <button class="btn btn-primary" style="margin-top:14px" onclick="saveBusinessName()">حفظ اسم المنشأة</button>
         <div class="list-row" style="margin-top:18px"><span class="muted">معرّف المنشأة</span><span class="small">${esc(business.id)}</span></div>
-        <div class="list-row"><span class="muted">مالك المنشأة</span><span class="small">${esc(state.user?.email||'')}</span></div>
+        <div class="list-row"><span class="muted">المالك الحالي</span><span class="small">${esc(state.user?.email||'')}</span></div>
       </section>
+
       <section class="card">
         <div class="card-title"><h3>ربط محاسبي الشركة</h3><span class="stat-icon">⌘</span></div>
-        <p class="muted" style="line-height:2">الهدف أن يستخدم كل محاسب حسابه الشخصي للوصول إلى بيانات الشركة المصرح له بها، وأن تظهر التحديثات للمحاسبين الآخرين.</p>
-        <div class="company-code" id="companyCodeDisplay">لم يتم إنشاء الكود</div>
+        <p class="muted" style="line-height:2">سيتيح نظام العضويات الآمن لكل محاسب استخدام حسابه الشخصي والوصول إلى بيانات الشركة المصرح له بها.</p>
+        <div class="company-code">لم يتم تفعيل كود المشاركة</div>
         <div style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:13px">
-          <button class="btn btn-primary" onclick="showCompanyCode()">عرض كود تجريبي</button>
-          <button class="btn" onclick="copyCompanyCode()">نسخ الكود</button>
+          <button class="btn btn-primary" onclick="showCompanyCode()">إعداد كود الشركة</button>
         </div>
-        <p class="small muted" style="line-height:1.9;margin-top:17px">تنبيه: الكود الظاهر تجريبي، ولا ينشئ عضوية ولا يشارك البيانات. الربط الحقيقي يحتاج إلى جدول أعضاء الشركة ودالة انضمام آمنة وسياسات وصول في Supabase.</p>
+        <p class="small muted" style="line-height:1.9;margin-top:17px">يلزم إعداد جدول عضويات ودالة انضمام آمنة وسياسات وصول RLS في Supabase قبل مشاركة البيانات.</p>
       </section>
     </div>
+
     <section class="card" style="margin-top:16px">
-      <div class="card-title"><h3>فريق المحاسبين</h3><span class="badge badge-gold">يتطلب إعداد قاعدة البيانات</span></div>
-      <p class="muted" style="line-height:2">لن يتم عرض أو إضافة أعضاء مزيفين. بعد إعداد نظام العضويات، ستظهر هنا حسابات المحاسبين وأدوارهم وصلاحياتهم.</p>
-      <div class="grid stats" style="margin-bottom:0">
-        ${statCard('المالك','1','♙','حسابك الحالي')}
-        ${statCard('المحاسبون','—','♧','لم يتم تفعيل العضويات بعد')}
-      </div>
+      <div class="card-title"><h3>فريق المحاسبين</h3><span class="badge badge-gold">غير مفعل</span></div>
+      <p class="muted" style="line-height:2">لن يتم عرض أعضاء غير حقيقيين. بعد إعداد نظام العضويات ستظهر حسابات أعضاء الشركة وصلاحياتهم هنا.</p>
     </section>`;
 }
 
 async function saveBusinessName(){
   if(!requireBusiness())return;
+
   const name=$('businessName').value.trim();
-  if(!name){toast('اكتب اسم المنشأة.','error');return;}
+  if(!name){
+    toast('اكتب اسم المنشأة.','error');
+    return;
+  }
+
   setLoading(true);
   try{
-    const {data,error}=await db.from('businesses').update({name})
-      .eq('id',state.business.id).eq('owner_id',state.user.id).select('*').single();
+    const {data,error}=await db.from('businesses')
+      .update({name})
+      .eq('id',state.business.id)
+      .eq('owner_id',state.user.id)
+      .select('*')
+      .single();
+
     if(error)throw error;
+
     state.business=data;
     $('topBusiness').textContent=data.name;
     toast('تم تحديث اسم المنشأة.');
-  }catch(e){toast('تعذر تعديل اسم المنشأة. '+errorMessage(e),'error')}
-  finally{setLoading(false)}
+  }catch(error){
+    toast('تعذر تعديل اسم المنشأة. '+errorMessage(error),'error');
+  }finally{
+    setLoading(false);
+  }
 }
 
-/* ---------------- الإعدادات ---------------- */
-
+/* الإعدادات */
 function renderSettings(){
   $('content').innerHTML=pageHead('الإعدادات','إعدادات الحساب والبرنامج.')
     +`<div class="grid two-col">
       <section class="card">
         <div class="card-title"><h3>الحساب الحالي</h3></div>
-        <div class="field"><label>البريد الإلكتروني</label><input value="${esc(state.user?.email||'')}" readonly></div>
-        <div class="field" style="margin-top:14px"><label>معرّف المستخدم</label><input value="${esc(state.user?.id||'')}" readonly></div>
+        <div class="field">
+          <label>البريد الإلكتروني</label>
+          <input value="${esc(state.user?.email||'')}" readonly>
+        </div>
+        <div class="field" style="margin-top:14px">
+          <label>معرّف المستخدم</label>
+          <input value="${esc(state.user?.id||'')}" readonly>
+        </div>
         <p class="small muted" style="line-height:1.8">لا تشارك كلمة المرور أو مفاتيح الإدارة الخاصة بقاعدة البيانات مع أي شخص.</p>
         <button class="btn btn-danger" onclick="logout()">تسجيل الخروج</button>
       </section>
       <section class="card">
-        <div class="card-title"><h3>معلومات البرنامج</h3></div>
+        <div class="card-title"><h3>معلومات عامة</h3></div>
         <div class="list-row"><span>اسم البرنامج</span><strong>المحاسب الذكي</strong></div>
-        <div class="list-row"><span>صاحب المشروع حسب الإعداد</span><strong>محمد كرم</strong></div>
+        <div class="list-row"><span>صاحب المشروع</span><strong>محمد كرم</strong></div>
         <div class="list-row"><span>قاعدة البيانات</span><strong>Supabase</strong></div>
-        <div class="list-row"><span>العملة الافتراضية المعروضة</span><strong>ريال سعودي</strong></div>
-        <p class="small muted" style="line-height:1.9">تغيير العملة هنا لا يغيّر العملة أو القيم المحفوظة سابقًا.</p>
+        <div class="list-row"><span>العملة المعروضة</span><strong>ريال سعودي</strong></div>
       </section>
     </div>
     <section class="card" style="margin-top:16px">
       <h3>ملاحظات مهمة</h3>
-      <p class="muted" style="line-height:2">هذا إصدار أولي. قبل استخدامه لحسابات شركة فعلية، يجب اختبار صلاحيات قاعدة البيانات، ومراجعة القيود المحاسبية والضرائب والنسخ الاحتياطي. رمز QR الحالي يحتوي على ملخص فاتورة ولا يمثل رابط تحقق رسميًا.</p>
+      <p class="muted" style="line-height:2">قبل استخدام البرنامج لحسابات شركة فعلية، يجب اختبار صلاحيات قاعدة البيانات والنسخ الاحتياطي والقيود المحاسبية والضرائب. رمز QR الحالي يحتوي على ملخص فاتورة ولا يمثل رابط تحقق رسميًا.</p>
     </section>`;
 }
 
-/* ---------------- التشغيل ---------------- */
+/* معلومات البرنامج */
+function renderProgram(){
+  $('content').innerHTML=pageHead('معلومات البرنامج','التعريف بالبرنامج وإمكاناته الحالية.')
+    +`<div class="grid two-col">
+      <section class="card">
+        <div class="stat-icon">م</div>
+        <h2>المحاسب الذكي</h2>
+        <p class="muted" style="line-height:2">برنامج عربي لإدارة بيانات العملاء والموردين والفواتير والحركات المالية وعرض ملخصات وتقارير أولية.</p>
+        <div class="list-row"><span>اسم البرنامج</span><strong>المحاسب الذكي</strong></div>
+        <div class="list-row"><span>صاحب المشروع</span><strong>محمد كرم</strong></div>
+        <div class="list-row"><span>الواجهة</span><strong>العربية</strong></div>
+        <div class="list-row"><span>العملة الافتراضية</span><strong>ريال سعودي</strong></div>
+      </section>
+      <section class="card">
+        <h3>الوظائف الحالية</h3>
+        <div class="list-row"><span>لوحة التحكم</span><span class="good">متاحة</span></div>
+        <div class="list-row"><span>إدارة العملاء</span><span class="good">متاحة</span></div>
+        <div class="list-row"><span>إدارة الموردين</span><span class="good">متاحة</span></div>
+        <div class="list-row"><span>الفواتير وQR</span><span class="good">متاحة</span></div>
+        <div class="list-row"><span>الحركات المالية</span><span class="good">متاحة</span></div>
+        <div class="list-row"><span>مشاركة الشركة الحقيقية</span><span class="bad">تحتاج إعدادًا</span></div>
+      </section>
+    </div>
+    <section class="card" style="margin-top:15px">
+      <h3>تنبيه</h3>
+      <p class="muted" style="line-height:2">هذه نسخة أولية لإدارة السجلات. لا تعتبر التقارير بديلًا عن مراجعة محاسب مختص، ولا يحتوي البرنامج حاليًا على جميع متطلبات الأنظمة المحاسبية أو الضريبية المعتمدة.</p>
+    </section>`;
+}
+
+/* سياسة الخصوصية */
+function renderPrivacy(){
+  $('content').innerHTML=pageHead('سياسة الخصوصية','توضيح مبسط لطريقة التعامل مع بياناتك.')
+    +`<section class="card">
+      <h3>1. البيانات التي تستخدمها داخل البرنامج</h3>
+      <p class="muted" style="line-height:2">قد يتعامل البرنامج مع البريد الإلكتروني للحساب، ومع بيانات المنشأة والعملاء والموردين والفواتير والحركات المالية التي تدخلها بنفسك.</p>
+
+      <h3>2. تخزين البيانات</h3>
+      <p class="muted" style="line-height:2">يستخدم البرنامج خدمة Supabase للمصادقة وتخزين البيانات وفق إعدادات المشروع وقواعد البيانات المرتبطة به.</p>
+
+      <h3>3. حماية البيانات</h3>
+      <p class="muted" style="line-height:2">تعتمد حماية السجلات على إعدادات المصادقة وصلاحيات قاعدة البيانات وسياسات RLS. يجب مراجعة هذه الإعدادات قبل إدخال بيانات مالية أو تجارية حساسة.</p>
+
+      <h3>4. مشاركة البيانات</h3>
+      <p class="muted" style="line-height:2">ميزة ربط محاسبي الشركة بكود مشترك ليست مفعلة في هذه النسخة. لا تعتبر الأكواد التجريبية وسيلة مشاركة أو تفويض وصول.</p>
+
+      <h3>5. مسؤولية المستخدم</h3>
+      <p class="muted" style="line-height:2">احتفظ بكلمة مرورك سرية، ولا تضع معلومات لا تملك حق إدخالها. يُنصح بإعداد نسخ احتياطية ومراجعة الصلاحيات بشكل دوري.</p>
+
+      <h3>6. التحديثات</h3>
+      <p class="muted" style="line-height:2">قد تتغير هذه السياسة عند إضافة وظائف جديدة أو تعديل طريقة تخزين البيانات. يجب تحديث نص السياسة بما يطابق الممارسات الفعلية قبل النشر الرسمي.</p>
+
+      <div class="info-box">هذه صياغة أولية داخل البرنامج وليست مراجعة قانونية نهائية أو ضمانًا بالامتثال لجميع الأنظمة.</div>
+    </section>`;
+}
+
+/* عن البرنامج */
+function renderAbout(){
+  $('content').innerHTML=pageHead('عن البرنامج','فكرة المحاسب الذكي والهدف منه.')
+    +`<section class="card">
+      <div class="stat-icon">✦</div>
+      <h2>المحاسب الذكي</h2>
+      <p class="muted" style="line-height:2.2">
+        المحاسب الذكي مشروع يهدف إلى تسهيل تنظيم الأعمال المحاسبية اليومية من خلال واجهة عربية واضحة تجمع بيانات المنشأة والعملاء والموردين والفواتير والحركات المالية والتقارير الأولية في مكان واحد.
+      </p>
+      <h3>أهداف المشروع</h3>
+      <div class="list-row"><span>سهولة تسجيل البيانات</span><span class="gold">✓</span></div>
+      <div class="list-row"><span>عرض ملخصات مالية</span><span class="gold">✓</span></div>
+      <div class="list-row"><span>تنظيم الفواتير والحركات</span><span class="gold">✓</span></div>
+      <div class="list-row"><span>التوسع مستقبلًا لدعم فرق المحاسبة</span><span class="gold">قيد التجهيز</span></div>
+      <p class="muted" style="line-height:2;margin-top:20px">صاحب فكرة المشروع والمشروع كما هو محدد في هذه النسخة: محمد كرم.</p>
+    </section>`;
+}
+
+/* حقوق التطوير */
+function renderDevelopers(){
+  $('content').innerHTML=pageHead('حقوق التطوير والملكية','بيان الحقوق المحددة داخل هذه النسخة من المشروع.')
+    +`<section class="card">
+      <div class="stat-icon">©</div>
+      <h2>المحاسب الذكي</h2>
+      <div class="info-box">
+        حقوق المشروع والفكرة والتطوير والتصميم والبرمجة والنشر محفوظة لصاحب المشروع كما هو محدد في هذه النسخة: <strong class="gold">محمد كرم</strong>.
+      </div>
+      <h3 style="margin-top:22px">نطاق الحقوق</h3>
+      <p class="muted" style="line-height:2">يشمل هذا البيان هوية المشروع ومحتوى الواجهة والتصميم والبرمجة والمواد التي يملك صاحب المشروع حقوقها، مع مراعاة حقوق الأطراف الأخرى ومكونات البرمجيات الخارجية وتراخيصها.</p>
+      <h3>المكونات الخارجية</h3>
+      <p class="muted" style="line-height:2">يستخدم البرنامج مكتبات وخدمات خارجية، ومنها Supabase ومكتبة QRCodeJS. تظل حقوق هذه المكونات وتراخيصها لأصحابها وفق شروطهم.</p>
+      <h3>تنبيه قانوني</h3>
+      <p class="muted" style="line-height:2">هذا النص يوضح نسبة الحقوق داخل التطبيق، لكنه لا يثبت وحده ملكية قانونية ولا يغني عن حفظ سجلات التطوير أو تسجيل الحقوق عند الحاجة.</p>
+      <p class="gold" style="margin-top:22px">© المحاسب الذكي — محمد كرم</p>
+    </section>`;
+}
+
+/* التشغيل */
+let startingSession=false;
 
 async function init(){
   setLoading(true);
   try{
     const {data,error}=await db.auth.getSession();
     if(error)throw error;
+
     state.user=data.session?.user||null;
+
     if(state.user){
       await startSession();
     }else{
       $('authScreen').classList.remove('hidden');
       $('app').classList.add('hidden');
-      $('bottomNav').classList.add('hidden');
     }
-  }catch(e){
-    console.error(e);
+  }catch(error){
+    console.error(error);
     $('authScreen').classList.remove('hidden');
-    toast('تعذر التحقق من الجلسة. تأكد من إعدادات Supabase والاتصال.','error');
+    toast('تعذر التحقق من الجلسة. تحقق من اتصال الإنترنت وإعدادات Supabase.','error');
   }finally{
     setLoading(false);
   }
@@ -1289,12 +1670,17 @@ db.auth.onAuthStateChange((event,session)=>{
   if(event==='SIGNED_OUT'){
     state.user=null;
     state.business=null;
+    state.customers=[];
+    state.suppliers=[];
+    state.invoices=[];
+    state.transactions=[];
     $('app').classList.add('hidden');
-    $('bottomNav').classList.add('hidden');
     $('authScreen').classList.remove('hidden');
   }else if(event==='SIGNED_IN'&&session?.user&&!state.user){
     state.user=session.user;
-    setTimeout(()=>startSession().catch(e=>toast(errorMessage(e),'error')),0);
+    setTimeout(()=>{
+      startSession().catch(error=>toast(errorMessage(error),'error'));
+    },0);
   }
 });
 
