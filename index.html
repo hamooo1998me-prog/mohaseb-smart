@@ -190,5 +190,15 @@ async function init(){if(initStarted)return;initStarted=true;const hasSharedInvo
 db.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'){state.user=null;state.business=null;state.role=null;state.customers=[];state.suppliers=[];state.invoices=[];state.transactions=[];$('app').classList.add('hidden');$('authScreen').classList.remove('hidden')}else if(event==='SIGNED_IN'&&session?.user&&!state.user){state.user=session.user;setTimeout(()=>startSession(),0)}});
 init();
 </script>
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./service-worker.js")
+      .catch(function (error) {
+        console.error("Service Worker registration failed:", error);
+      });
+  });
+}
+  </script>
 </body>
 </html>
