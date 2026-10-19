@@ -1,4 +1,4 @@
-<escape>{
+{
 "id": "./",
 "name": "المحاسب الذكي | محمد كرم",
 "short_name": "المحاسب الذكي",
@@ -12,16 +12,22 @@
 "theme_color": "#101827",
 "icons": [
 {
-"src": "./icon-512.png",
+"src": "./launchericon-192x192.png",
+"sizes": "192x192",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "./launchericon-512x512.png",
 "sizes": "512x512",
 "type": "image/png",
 "purpose": "any"
 },
 {
-"src": "./icon.svg",
-"sizes": "any",
-"type": "image/svg+xml",
-"purpose": "any"
+"src": "./icon-512.png",
+"sizes": "512x512",
+"type": "image/png",
+"purpose": "maskable"
 }
 ]
-}</escape>
+}
